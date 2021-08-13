@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://unpkg.com/vue@next"></script>
 <script>
   var _hmt = _hmt || [];
   (function() {
@@ -138,8 +139,8 @@
               <p class="mb-4 d-none d-md-block">
                 <strong>强大而优雅的PE工具</strong>
               </p>
-              <p>
-                最新版本：3.2.0 &nbsp;&nbsp;&nbsp; 更新时间：2021-03-01
+              <p id="version">
+                Beta公测版本：{{beta}} &nbsp;&nbsp;&nbsp; Alpha内测版本：{{alpha}}
               </p>
             </div>
           </div>
@@ -1053,6 +1054,35 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(bp, s);
     })();
+
+    const vueVersion = {
+      data() {
+        return {
+          beta: "loading...",
+          alpha: "loading...",
+        }
+      },
+      methods:{
+         getEdgeless(){
+            fetch("https://pineapple.edgeless.top/api/v2/info/iso_version").then((res)=>{
+               res.text().then((ver)=>{
+                  this.beta=ver
+               })
+            })
+
+            fetch("https://pineapple.edgeless.top/api/v2/alpha/data?token=WDNMD").then((res)=>{
+               res.json().then((json)=>{
+                  this.alpha=json.version
+               })
+            })
+         }
+      },
+      mounted(){
+         this.getEdgeless()
+      }
+    }
+
+Vue.createApp(vueVersion).mount('#version')
   </script>
 </body>
 
