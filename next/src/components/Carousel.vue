@@ -11,8 +11,8 @@
         <div class="view" style="background-image: url('/img/picbed/r1.jpg'); background-repeat: no-repeat; background-size: cover;">
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
             <div class="text-center white-text mx-5 wow fadeIn">
-              <h1 class="mb-4">
-                <span class="font-earth" style="font-size: 40px;"><strong>edgElEss</strong></span>
+              <h1 class="mb-4 font-earth">
+                <strong>edgElEss</strong>
               </h1>
               <p class="mb-4 d-none d-md-block">
                 <strong>强大而优雅的半开源PE工具</strong>
@@ -147,7 +147,19 @@ onMounted(() => {
 }
 
 .rgba-black-light {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.white-text {
+  color: #fff !important;
+}
+
+.white-text h1 {
+  font-size: 40px;
+}
+
+.white-text p {
+  font-size: 1.25rem;
 }
 
 #carousel-example-1z .carousel, 

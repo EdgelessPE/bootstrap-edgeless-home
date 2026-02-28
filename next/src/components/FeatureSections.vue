@@ -32,7 +32,6 @@
           </div>
           <div class="col-md-6 mb-4">
             <h3 class="h3 mb-3">基于 Win10 的PE核心</h3>
-            <hr />
             <br />
             <p>• 使用19043作为母盘，强力驱动主流配置机型</p>
             <br />
@@ -68,7 +67,7 @@
             <div style="height: 30px"></div>
             <div class="row">
               <div class="col-1 me-3">
-                <i class="fa fa-rocke fa-2x" style="color: #F44336"></i>
+                <i class="fa fa-rocket fa-2x" style="color: #F44336"></i>
               </div>
               <div class="col-10">
                 <h5 class="feature-title">易于管理</h5>
