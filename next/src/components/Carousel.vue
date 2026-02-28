@@ -194,22 +194,42 @@ onMounted(() => {
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-image: none;
+  background-image: none !important;
+  width: 50px !important;
+  height: 50px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 20 !important;
+  opacity: 1 !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 20 !important;
+  width: 15% !important;
+  opacity: 1 !important;
+}
+
+.carousel-control-prev {
+  left: 0 !important;
+}
+
+.carousel-control-next {
+  right: 0 !important;
 }
 
 .carousel-control-prev-icon::before {
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  content: '\f053';
-  color: white;
-  font-size: 2rem;
+  font-family: 'FontAwesome' !important;
+  content: '\f104' !important;
+  color: white !important;
+  font-size: 2rem !important;
 }
 
 .carousel-control-next-icon::before {
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
-  content: '\f054';
-  color: white;
-  font-size: 2rem;
+  font-family: 'FontAwesome' !important;
+  content: '\f105' !important;
+  color: white !important;
+  font-size: 2rem !important;
 }
 </style>
