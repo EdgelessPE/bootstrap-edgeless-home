@@ -55,6 +55,19 @@
 </template>
 
 <style scoped>
+.section {
+  padding: 60px 0;
+}
+
+.media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.media-body {
+  flex: 1;
+}
+
 .circle-icon {
   width: 50px;
   height: 50px;
