@@ -1,0 +1,30 @@
+<template>
+  <section class="w3l-index-block3">
+    <div id="me"></div>
+    <div class="section-info py-5">
+      <div class="container py-md-3">
+        <h1 style="color: #2F5696" class="h1 text-center mb-5">了解Edgeless ME</h1>
+        <div class="row cwp17-two align-items-center">
+          <div class="col-md-6 cwp17-image">
+            <img src="/img/LOGO_WEPE.png" class="img-fluid" alt="" />
+          </div>
+          <div class="col-md-6 cwp17-text">
+            <h2>忠实的微PE用户?</h2>
+            <p>在重新写入之前不妨试试这个——Edgeless ME 微PE专用版<br>在微PE上体验Edgeless的便捷方便 </p>
+            <a href="https://wiki.edgeless.top/v2/faq/ME.html" style="color: #2F5696" target="_blank">查看教程
+              &raquo;</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="https://zfile.edgeless.top/Socket/Misc/Edgeless%20ME_%E5%BE%AEPE_1.1.0.0_Cno.7z" style="color: #2F5696" target="_blank">点击获取 &raquo;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+.cwp17-image img {
+  max-width: 100%;
+  height: auto;
+}
+</style>

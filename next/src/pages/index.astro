@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.vue';
+import Carousel from '../components/Carousel.vue';
+import FeatureSections from '../components/FeatureSections.vue';
+import PureSection from '../components/PureSection.vue';
+import DetailsGrid from '../components/DetailsGrid.vue';
+import DonateSection from '../components/DonateSection.vue';
+import DownloadSection from '../components/DownloadSection.vue';
+import TutorialSteps from '../components/TutorialSteps.vue';
+import EdgelessME from '../components/EdgelessME.vue';
+import Footer from '../components/Footer.vue';
+---
+
+<Layout title="Edgeless-强大而优雅的半开源PE工具">
+  <Navbar client:load />
+  <Carousel client:load />
+  
+  <main>
+    <div class="container">
+      <FeatureSections client:visible />
+      
+      <hr class="my-5" />
+      
+      <PureSection client:visible />
+      
+      <hr class="mb-5" />
+      
+      <DetailsGrid client:visible />
+      
+      <div id="donate"></div>
+      
+      <hr class="mb-5" />
+      
+      <DonateSection client:visible />
+      
+      <hr class="mb-5" />
+      
+      <DownloadSection client:visible />
+    </div>
+  </main>
+  
+  <hr class="mb-5" />
+  
+  <TutorialSteps client:visible />
+  
+  <EdgelessME client:visible />
+  
+  <Footer client:visible />
+</Layout>
