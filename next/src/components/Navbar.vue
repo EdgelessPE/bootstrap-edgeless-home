@@ -47,6 +47,7 @@ const handleScroll = () => {
 };
 
 onMounted(() => {
+  handleScroll();
   window.addEventListener('scroll', handleScroll);
 });
 
