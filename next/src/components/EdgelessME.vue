@@ -10,11 +10,12 @@
           </div>
           <div class="col-md-6 cwp17-text">
             <h2>忠实的微PE用户?</h2>
-            <p>在重新写入之前不妨试试这个——Edgeless ME 微PE专用版<br>在微PE上体验Edgeless的便捷方便 </p>
-            <a href="https://wiki.edgeless.top/v2/faq/ME.html" style="color: #2F5696" target="_blank">查看教程
-              &raquo;</a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="https://zfile.edgeless.top/Socket/Misc/Edgeless%20ME_%E5%BE%AEPE_1.1.0.0_Cno.7z" style="color: #2F5696" target="_blank">点击获取 &raquo;</a>
+            <p class="mb-3">在重新写入之前不妨试试这个——Edgeless ME 微PE专用版<br>在微PE上体验Edgeless的便捷方便 </p>
+            <div class="flex gap-4">
+              <a href="https://wiki.edgeless.top/v2/faq/ME.html" style="color: #2F5696" target="_blank">查看教程
+                »</a>
+              <a href="https://zfile.edgeless.top/Socket/Misc/Edgeless%20ME_%E5%BE%AEPE_1.1.0.0_Cno.7z" style="color: #2F5696" target="_blank">点击获取 »</a>
+            </div>
           </div>
         </div>
       </div>

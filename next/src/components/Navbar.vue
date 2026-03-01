@@ -28,7 +28,7 @@
         </ul>
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a href="#download" class="nav-link border border-light rounded waves-effect waves-light">&nbsp;&nbsp;&nbsp;下载&nbsp;&nbsp;&nbsp;</a>
+            <a href="#download" class="nav-link border border-light rounded waves-effect waves-light px-3">下载</a>
           </li>
         </ul>
       </div>

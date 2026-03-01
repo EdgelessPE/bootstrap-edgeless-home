@@ -17,10 +17,10 @@
               <p class="mb-4 d-none d-md-block">
                 <strong>强大而优雅的半开源PE工具</strong>
               </p>
-              <p id="version">
+<p id="version">
                 Beta公测版本：{{ beta }}
                 <template v-if="alpha !== '0.0.0'">
-                  &nbsp;&nbsp;&nbsp; Alpha内测版本：{{ alpha }}
+                  <span class="mx-3">Alpha内测版本：{{ alpha }}</span>
                 </template>
               </p>
             </div>

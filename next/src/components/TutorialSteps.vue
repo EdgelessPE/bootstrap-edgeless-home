@@ -2,11 +2,10 @@
   <section>
     <div class="section light-bg">
       <div class="text-center">
-        <h1 style="color: #2F5696">三步打造属于你的<br>
+        <h1 style="color: #2F5696" class="mb-4">三步打造属于你的
           <span class="font-earth">edgElEss</span>
         </h1>
       </div>
-      <br /><br />
       <div class="container">
         <div class="row">
           <div class="col-md-8 d-flex align-items-center">
@@ -35,8 +34,7 @@
                       style="color: #505356">从下载站下载的主题资源包没有特定的位置，请任意新建一个文件夹放置</small> </p>
                 </div>
               </li>
-              <br />
-              <li class="media">
+              <li class="media mt-4">
                 <div class="text-end">
                   <a href="https://wiki.edgeless.top/v2/guide/burn.html" target="_blank"
                     class="btn btn-primary">详细步骤</a>
@@ -51,7 +49,6 @@
       </div>
     </div>
   </section>
-  <div><br /></div>
 </template>
 
 <style scoped>
