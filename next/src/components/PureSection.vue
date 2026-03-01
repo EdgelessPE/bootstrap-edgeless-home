@@ -1,11 +1,11 @@
 <template>
   <section>
-    <h2 class="my-5 h3 text-center">不仅仅是纯净</h2>
+    <h2 class="my-5 h2 text-center">不仅仅是纯净</h2>
     <div class="row features-small mb-5 mt-3 wow fadeIn">
       <div class="col-md-4">
-<div class="row mb-4">
+        <div class="row mb-4">
           <div class="col-10">
-            <h2>恪守"三无"原则</h2>
+            <h3 class="h3 h-auto">恪守"三无"原则</h3>
           </div>
         </div>
         <div class="row mb-4">
@@ -40,10 +40,10 @@
       <div class="col-md-4 flex-center text-center">
         <img src="/img/picbed/f5.png" class="img-fluid shadow-z-depth-2 rounded" alt="" />
       </div>
-<div class="col-md-4 mt-2">
+      <div class="col-md-4 mt-2">
         <div class="row mb-4">
           <div class="col-10">
-            <h2>有胆量就开源</h2>
+            <h3 class="h3 h-auto">有胆量就开源</h3>
           </div>
         </div>
         <div class="row mb-4">
@@ -52,8 +52,10 @@
           </div>
           <div class="col-10">
             <h6 class="feature-title">多数原创代码均遵循MPL-2.0协议开源</h6>
-            <p class="grey-text">欢迎各位同行在遵循MPL-2.0协议的前提下使用我们的原创代码<br><a
-                href="https://github.com/EdgelessPE/Edgeless" target="_blank">查看GitHub仓库</a></p>
+            <p class="grey-text">欢迎各位同行在遵循MPL-2.0协议的前提下使用我们的原创代码
+              <br>
+              <a href="https://github.com/EdgelessPE/Edgeless" target="_blank">查看GitHub仓库</a>
+            </p>
           </div>
         </div>
         <div class="row mb-4">

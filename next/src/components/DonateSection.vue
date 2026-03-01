@@ -1,5 +1,5 @@
 <template>
-  <section class="w3l-index-block3 py-5">
+  <section class="w3l-index-block3 pt-3 pb-5">
     <div class="section-info py-md-5">
       <div class="container py-md-3">
         <h1 class="h1 text-center h-auto" style="color: #2F5696">

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2 class="my-5 h3 text-center">打动你的更多细节</h2>
+    <h3 class="my-5 h3 text-center h-auto">打动你的更多细节</h3>
     <!-- First row -->
     <div class="row features-small mt-5 wow fadeIn">
       <div class="col-xl-3 col-lg-6">

@@ -1,5 +1,6 @@
 <template>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" :class="{ 'top-nav-collapse': isScrolled }">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"
+    :class="{ 'top-nav-collapse': isScrolled }">
     <div class="container">
       <a class="navbar-brand" href="#">
         <span class="font-earth">edgElEss</span>
@@ -68,5 +69,9 @@ onUnmounted(() => {
 .scrolling-navbar {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.nav-link {
+  color: #fff;
 }
 </style>
