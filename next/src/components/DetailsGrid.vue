@@ -4,7 +4,7 @@
     <div
       v-for="(row, rowIndex) in features"
       :key="rowIndex"
-      class="row features-small mt-5 wow fadeIn"
+      class="row features-small mt-5 wow-fadeIn"
       :class="{ 'mt-4': rowIndex > 0 }"
     >
       <div v-for="(feature, index) in row" :key="index" class="col-xl-3 col-lg-6">
@@ -50,23 +50,3 @@ const features = [
   ],
 ]
 </script>
-
-<style scoped>
-.feature-title {
-  font-weight: bold;
-  margin-bottom: 0.25rem;
-}
-
-.grey-text {
-  color: #6c757d;
-  margin-top: 0.5rem;
-}
-
-.indigo-text {
-  color: #3f51b5;
-}
-
-.wow.fadeIn {
-  animation-duration: 1s;
-}
-</style>

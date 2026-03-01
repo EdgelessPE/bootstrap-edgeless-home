@@ -1,21 +1,16 @@
 <template>
-  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+  <footer class="bg-[#1C2331] text-white text-center font-small mt-4 wow-fadeIn">
     <div class="pt-4" id="py">
       <h5 class="mb-4">友链链接</h5>
       <div v-for="(links, category) in friendlyLinks" :key="category" class="mb-4">
-        <span class="text-muted block mb-2">{{ category }}</span>
+        <span class="text-white/60 block mb-2">{{ category }}</span>
         <div class="flex flex-wrap justify-center gap-3">
-          <a
-            v-for="link in links"
-            :key="link.url"
-            :href="link.url"
-            target="_blank"
-            :title="link.title"
-          >{{ link.name }}</a>
+          <a v-for="link in links" :key="link.url" :href="link.url" target="_blank" :title="link.title">{{ link.name
+          }}</a>
         </div>
       </div>
     </div>
-    <div class="footer-copyright py-3 mt-4">
+    <div class="text-white/60 bg-black/20 py-3 mt-4">
       <div class="flex justify-center gap-16 pt-8 pb-14">
         <div class="flex items-center gap-2">
           <svg t="1635599987840" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -84,32 +79,3 @@ const friendlyLinks = {
   ],
 }
 </script>
-
-<style scoped>
-.page-footer {
-  background-color: #1C2331;
-  color: #fff;
-}
-
-.page-footer .text-muted {
-  color: rgba(255, 255, 255, 0.6) !important;
-}
-
-.footer-copyright {
-  color: rgba(255, 255, 255, 0.6);
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.wow.fadeIn {
-  animation-duration: 1s;
-}
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="card wow fadeIn bg-cover" style="background-image: url(/img/picbed/d.jpg);">
+  <section class="card wow-fadeIn bg-cover" style="background-image: url(/img/picbed/d.jpg);">
     <div class="card-body text-white text-center py-5 px-5 my-5">
       <div class="mb-4">
         <h1 class="h1 h-auto"><strong>立即获取</strong>
@@ -31,23 +31,3 @@ const downloadLinks = [
   { url: 'https://down.edgeless.top/?backup=2', icon: 'fas fa-cloud', text: '网盘分享' },
 ]
 </script>
-
-<style scoped>
-.btn-outline-white {
-  border: 2px solid white;
-  color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.25rem;
-  text-decoration: none;
-  margin: 0 0.5rem;
-}
-
-.btn-outline-white:hover {
-  background-color: white;
-  color: #333;
-}
-
-.wow.fadeIn {
-  animation-duration: 1s;
-}
-</style>

@@ -3,7 +3,7 @@
     <div class="container">
       <!-- Section 1 -->
       <section class="w3l-index-block3">
-        <div class="section-info py-md-5">
+        <div class="py-md-5">
           <div class="container py-md-3">
             <h2 class="h2 text-center mb-5 h-auto">谁说PE只能满足维护？</h2>
             <div class="row">
@@ -20,7 +20,7 @@
       </section>
 
       <!-- Section 2 -->
-      <section class="mt-5 wow fadeIn">
+      <section class="mt-5 wow-fadeIn">
         <div class="row">
           <div class="col-md-6 mb-4">
             <img :src="coreSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
@@ -38,7 +38,7 @@
       <!-- Section 3: 强大的插件包 -->
       <section>
         <h3 class="h3 text-center mb-5">{{ pluginSection.title }}</h3>
-        <div class="row wow fadeIn">
+        <div class="row wow-fadeIn">
           <div class="col-lg-6 col-md-12 px-4">
             <div v-for="(feature, index) in pluginFeatures" :key="index" class="row mb-6">
               <div class="col-1 me-3">
@@ -62,7 +62,7 @@
       <!-- Section 4: 优雅的主题包 -->
       <section>
         <h3 class="h3 text-center mb-5">{{ themeSection.title }}</h3>
-        <div class="row wow fadeIn">
+        <div class="row wow-fadeIn">
           <div class="col-md-6 mb-4">
             <img :src="themeSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
           </div>
@@ -202,42 +202,3 @@ const performanceFeatures = [
   },
 ]
 </script>
-
-<style scoped>
-.feature-title {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.grey-text {
-  color: #6c757d;
-}
-
-.cyan-text {
-  color: #00bcd4;
-}
-
-.green-text {
-  color: #4caf50;
-}
-
-.orange-text {
-  color: #ff9800;
-}
-
-.purple-text {
-  color: #9c27b0;
-}
-
-.yellow-text {
-  color: #ffeb3b;
-}
-
-.shadow-z-depth-2 {
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-}
-
-.wow.fadeIn {
-  animation-duration: 1s;
-}
-</style>

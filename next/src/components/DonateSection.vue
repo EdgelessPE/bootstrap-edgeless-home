@@ -1,12 +1,7 @@
 <template>
   <section class="w3l-index-block3 pt-3 pb-5">
-    <ImageModal
-      :visible="showModal"
-      imageSrc="/img/alipay.jpg"
-      alt="支付宝捐赠码"
-      @close="showModal = false"
-    />
-    <div class="section-info py-md-5">
+    <ImageModal :visible="showModal" imageSrc="/img/alipay.jpg" alt="支付宝捐赠码" @close="showModal = false" />
+    <div class="border border-gray-200 rounded-lg bg-gray-50 py-15">
       <div class="container py-md-3">
         <h1 class="h1 text-center h-auto" style="color: #2F5696">
           如果您认可<span class="font-earth">edgElEss</span>
@@ -40,16 +35,3 @@ import ImageModal from './ImageModal.vue'
 
 const showModal = ref(false)
 </script>
-
-<style scoped>
-.section-info {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  background-color: #fafafa;
-}
-
-.btn-primary {
-  background-color: #2F5696;
-  border-color: #2F5696;
-}
-</style>

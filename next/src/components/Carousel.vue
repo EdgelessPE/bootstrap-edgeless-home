@@ -19,7 +19,7 @@
         <div class="view"
           :style="`background-image: url('${slide.bgImage}'); background-repeat: no-repeat; background-size: cover;`">
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
-            <div class="text-center white-text mx-5 wow fadeIn">
+            <div class="text-center white-text mx-5 wow-fadeIn">
               <h1 class="mb-4" :class="{ 'font-earth': slide.isTitleLarge }">
                 <strong v-html="slide.title"></strong>
               </h1>

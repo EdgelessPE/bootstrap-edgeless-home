@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="section light-bg pb-0">
+    <div class="py-15 pb-0 light-bg">
       <div class="text-center">
         <h1 class="h1 h-auto mb-2" style="color: #2F5696">
           三步打造属于你的
@@ -14,12 +14,12 @@
               <li
                 v-for="(step, index) in steps"
                 :key="index"
-                class="media"
+                class="flex items-start"
                 :class="{ 'my-4': index === 1, 'mt-4': index === 3 }"
               >
                 <template v-if="index < 3">
                   <div class="circle-icon me-4">{{ index + 1 }}</div>
-                  <div class="media-body">
+                  <div class="flex-1">
                     <h4 class="h4 h-auto" style="color: #2F5696">{{ step.title }}</h4>
                     <p v-html="step.description"></p>
                   </div>
@@ -61,37 +61,3 @@ const steps = [
   },
 ]
 </script>
-
-<style scoped>
-.section {
-  padding: 60px 0;
-}
-
-.media {
-  display: flex;
-  align-items: flex-start;
-}
-
-.media-body {
-  flex: 1;
-}
-
-.circle-icon {
-  width: 50px;
-  height: 50px;
-  background-color: #2F5696;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-.btn-primary {
-  background-color: #2F5696;
-  border-color: #2F5696;
-}
-</style>

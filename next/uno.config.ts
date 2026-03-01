@@ -66,6 +66,8 @@ export default defineConfig({
   },
   shortcuts: {
     'btn-outline-white': 'border-2 border-white text-white rounded px-6 py-2 hover:bg-white hover:text-gray-800 transition-colors duration-300',
+    'btn-primary': 'bg-[#2F5696] border-[#2F5696] text-white rounded px-6 py-2',
+    'btn-primary-outline': 'border-2 border-white text-white px-6 py-2 hover:bg-white hover:text-gray-800',
     'rgba-black-light': 'bg-black/60',
     'rgba-black-strong': 'bg-black/70',
     'flex-center': 'flex justify-center items-center',
@@ -80,6 +82,8 @@ export default defineConfig({
     'purple-text': 'text-purple-500',
     'red-text': 'text-red-500',
     'yellow-text': 'text-yellow-500',
+    'wow-fadeIn': 'wow fadeIn animate-duration-1s',
+    'circle-icon': 'w-50px h-50px bg-[#2F5696] text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0',
   },
   rules: [
     ['font-earth', { 'font-family': 'earth, sans-serif' }],

@@ -1,7 +1,7 @@
 <template>
   <section>
     <h2 class="my-5 h2 text-center">不仅仅是纯净</h2>
-    <div class="row features-small mb-5 mt-3 wow fadeIn">
+    <div class="row features-small mb-5 mt-3 wow-fadeIn">
       <div class="col-md-4">
         <div class="row mb-4">
           <div class="col-10">
@@ -62,26 +62,3 @@ const openSourceSection = {
   ]
 }
 </script>
-
-<style scoped>
-.feature-title {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.grey-text {
-  color: #6c757d;
-}
-
-.indigo-text {
-  color: #3f51b5;
-}
-
-.shadow-z-depth-2 {
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-}
-
-.wow.fadeIn {
-  animation-duration: 1s;
-}
-</style>

@@ -1,12 +1,12 @@
 <template>
   <section class="w3l-index-block3">
     <div id="me"></div>
-    <div class="section-info py-5">
+    <div class="py-12">
       <div class="container py-md-3">
         <h1 style="color: #2F5696" class="h1 text-center mb-5 h-auto">了解Edgeless ME</h1>
         <div class="row cwp17-two align-items-center">
-          <div class="col-md-6 cwp17-image">
-            <img src="/img/LOGO_WEPE.png" class="img-fluid" alt="" />
+          <div class="col-md-6">
+            <img src="/img/LOGO_WEPE.png" class="img-fluid max-w-full h-auto" alt="" />
           </div>
           <div class="col-md-6 cwp17-text">
             <h3 class="h3 h-auto">忠实的微PE用户?</h3>
@@ -23,10 +23,3 @@
     </div>
   </section>
 </template>
-
-<style scoped>
-.cwp17-image img {
-  max-width: 100%;
-  height: auto;
-}
-</style>

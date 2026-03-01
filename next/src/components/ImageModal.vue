@@ -33,7 +33,7 @@ const close = () => {
 }
 </script>
 
-<style scoped>
+<style>
 .modal-enter-active,
 .modal-leave-active {
   transition: opacity 0.3s ease;
