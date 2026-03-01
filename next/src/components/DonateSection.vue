@@ -1,5 +1,11 @@
 <template>
   <section class="w3l-index-block3 pt-3 pb-5">
+    <ImageModal
+      :visible="showModal"
+      imageSrc="/img/alipay.jpg"
+      alt="支付宝捐赠码"
+      @close="showModal = false"
+    />
     <div class="section-info py-md-5">
       <div class="container py-md-3">
         <h1 class="h1 text-center h-auto" style="color: #2F5696">
@@ -20,13 +26,20 @@
 
         <div class="text-center mt-4">
           <h3 class="h4 mb-4" style="color: #2F5696">扫码付费过于直白？我们提供了额外的捐赠方式</h3>
-          <a href="/meal/index.html" target="_blank" class="btn btn-primary">让我康康</a>
+          <button class="btn btn-primary" @click="showModal = true">让我康康</button>
         </div>
       </div>
     </div>
     <div id="download"></div>
   </section>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+import ImageModal from './ImageModal.vue'
+
+const showModal = ref(false)
+</script>
 
 <style scoped>
 .section-info {
