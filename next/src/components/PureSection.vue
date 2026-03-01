@@ -5,82 +5,63 @@
       <div class="col-md-4">
         <div class="row mb-4">
           <div class="col-10">
-            <h3 class="h3 h-auto">恪守"三无"原则</h3>
+            <h3 class="h3 h-auto">{{ pureSection.title }}</h3>
           </div>
         </div>
-        <div class="row mb-4">
+        <div v-for="(feature, index) in pureSection.features" :key="index" class="row mb-4">
           <div class="col-2">
             <i class="fas fa-check-circle fa-2x indigo-text"></i>
           </div>
           <div class="col-10">
-            <h6 class="feature-title">无广告</h6>
-            <p class="grey-text">官方PE内核、官方插件、官方网站均无广告
-            </p>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col-2">
-            <i class="fas fa-check-circle fa-2x indigo-text"></i>
-          </div>
-          <div class="col-10">
-            <h6 class="feature-title">无收费</h6>
-            <p class="grey-text">官方PE内核、官方插件均为永久免费使用，内测交流群永久免费进群，拒绝变相收费</p>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col-2">
-            <i class="fas fa-check-circle fa-2x indigo-text"></i>
-          </div>
-          <div class="col-10">
-            <h6 class="feature-title">无劫持</h6>
-            <p class="grey-text">官方PE核心、官方插件不会对本地硬盘的系统进行任何恶意修改</p>
+            <h6 class="feature-title">{{ feature.title }}</h6>
+            <p class="grey-text" v-html="feature.description"></p>
           </div>
         </div>
       </div>
       <div class="col-md-4 flex-center text-center">
-        <img src="/img/picbed/f5.png" class="img-fluid shadow-z-depth-2 rounded" alt="" />
+        <img :src="centerImage" class="img-fluid shadow-z-depth-2 rounded" alt="" />
       </div>
       <div class="col-md-4 mt-2">
         <div class="row mb-4">
           <div class="col-10">
-            <h3 class="h3 h-auto">有胆量就开源</h3>
+            <h3 class="h3 h-auto">{{ openSourceSection.title }}</h3>
           </div>
         </div>
-        <div class="row mb-4">
+        <div v-for="(feature, index) in openSourceSection.features" :key="index" class="row mb-4">
           <div class="col-2">
             <i class="fas fa-check-circle fa-2x indigo-text"></i>
           </div>
           <div class="col-10">
-            <h6 class="feature-title">多数原创代码均遵循MPL-2.0协议开源</h6>
-            <p class="grey-text">欢迎各位同行在遵循MPL-2.0协议的前提下使用我们的原创代码
-              <br>
-              <a href="https://github.com/EdgelessPE/Edgeless" target="_blank">查看GitHub仓库</a>
-            </p>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col-2">
-            <i class="fas fa-check-circle fa-2x indigo-text"></i>
-          </div>
-          <div class="col-10">
-            <h6 class="feature-title">大量使用解释型代码</h6>
-            <p class="grey-text">使用批处理和PECMD脚本实现功能<br>无需复杂的逆向操作，Edgeless的运行过程清晰可见
-            </p>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col-2">
-            <i class="fas fa-check-circle fa-2x indigo-text"></i>
-          </div>
-          <div class="col-10">
-            <h6 class="feature-title">欢迎修改打包形成自己的作品</h6>
-            <p class="grey-text">我们开放了Edgeless内核的修改授权，请前往文档的"合作洽谈"章节查看要求</p>
+            <h6 class="feature-title">{{ feature.title }}</h6>
+            <p class="grey-text" v-html="feature.description"></p>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+const centerImage = '/img/picbed/f5.png'
+
+const pureSection = {
+  title: '恪守"三无"原则',
+  features: [
+    { title: '无广告', description: '官方PE内核、官方插件、官方网站均无广告' },
+    { title: '无收费', description: '官方PE内核、官方插件均为永久免费使用，内测交流群永久免费进群，拒绝变相收费' },
+    { title: '无劫持', description: '官方PE核心、官方插件不会对本地硬盘的系统进行任何恶意修改' },
+  ]
+}
+
+const openSourceSection = {
+  title: '有胆量就开源',
+  features: [
+    { title: '多数原创代码均遵循MPL-2.0协议开源', description: '欢迎各位同行在遵循MPL-2.0协议的前提下使用我们的原创代码<br><a href="https://github.com/EdgelessPE/Edgeless" target="_blank">查看GitHub仓库</a>' },
+    { title: '大量使用解释型代码', description: '使用批处理和PECMD脚本实现功能<br>无需复杂的逆向操作，Edgeless的运行过程清晰可见' },
+    { title: '欢迎修改打包形成自己的作品', description: '我们开放了Edgeless内核的修改授权，请前往文档的"合作洽谈"章节查看要求' },
+  ]
+}
+</script>
 
 <style scoped>
 .feature-title {

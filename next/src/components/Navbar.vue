@@ -11,25 +11,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">首页</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#feature">特性</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#donate">捐赠</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://wiki.edgeless.top/v2" target="_blank">文档</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/EdgelessPE/Edgeless" target="_blank">GitHub</a>
+          <li v-for="link in navLinks" :key="link.href" class="nav-item">
+            <a
+              class="nav-link"
+              :href="link.href"
+              :target="link.target"
+            >{{ link.text }}</a>
           </li>
         </ul>
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a href="#download" class="nav-link border border-light rounded waves-effect waves-light px-3">下载</a>
+            <a :href="downloadLink.href" class="nav-link border border-light rounded waves-effect waves-light px-3">{{ downloadLink.text }}</a>
           </li>
         </ul>
       </div>
@@ -41,6 +33,16 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const isScrolled = ref(false);
+
+const navLinks = [
+  { text: '首页', href: '#' },
+  { text: '特性', href: '#feature' },
+  { text: '捐赠', href: '#donate' },
+  { text: '文档', href: 'https://wiki.edgeless.top/v2', target: '_blank' },
+  { text: 'GitHub', href: 'https://github.com/EdgelessPE/Edgeless', target: '_blank' },
+]
+
+const downloadLink = { text: '下载', href: '#download' }
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;

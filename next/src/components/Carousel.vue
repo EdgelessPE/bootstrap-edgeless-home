@@ -1,76 +1,42 @@
 <template>
   <div id="carousel-example-1z" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-bs-target="#carousel-example-1z" data-bs-slide-to="0" class="active"></li>
-      <li data-bs-target="#carousel-example-1z" data-bs-slide-to="1"></li>
-      <li data-bs-target="#carousel-example-1z" data-bs-slide-to="2"></li>
-      <li data-bs-target="#carousel-example-1z" data-bs-slide-to="3"></li>
+      <li
+        v-for="(slide, index) in slides"
+        :key="index"
+        data-bs-target="#carousel-example-1z"
+        :data-bs-slide-to="index"
+        :class="{ active: index === 0 }"
+      ></li>
     </ol>
     <div class="carousel-inner" role="listbox">
-      <div class="carousel-item active">
+      <div
+        v-for="(slide, index) in slides"
+        :key="index"
+        class="carousel-item"
+        :class="{ active: index === 0 }"
+      >
         <div class="view"
-          style="background-image: url('/img/picbed/r1.jpg'); background-repeat: no-repeat; background-size: cover;">
+          :style="`background-image: url('${slide.bgImage}'); background-repeat: no-repeat; background-size: cover;`">
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
             <div class="text-center white-text mx-5 wow fadeIn">
-              <h1 class="mb-4 font-earth">
-                <strong>edgElEss</strong>
+              <h1 class="mb-4" :class="{ 'font-earth': slide.isTitleLarge }">
+                <strong v-html="slide.title"></strong>
               </h1>
-              <p class="mb-4 d-none d-md-block">
-                <strong>强大而优雅的半开源PE工具</strong>
+              <p :class="{ 'mb-4 d-none d-md-block': slide.showSubtitle }">
+                <strong v-if="slide.showSubtitle">{{ slide.subtitle }}</strong>
+                <div v-else class="font-size-sm" v-html="slide.description"></div>
               </p>
-              <div id="version" class="flex gap-4 font-size-sm">
+              <div v-if="slide.showVersion" id="version" class="flex gap-4 font-size-sm">
                 <div>Beta公测版本：{{ beta }}</div>
                 <div v-if="alpha !== '0.0.0'">Alpha内测版本：{{ alpha }}</div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="view"
-          style="background-image: url('/img/picbed/r2.jpg'); background-repeat: no-repeat; background-size: cover;">
-          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
-            <div class="text-center white-text mx-5 wow fadeIn">
-              <h1 class="mb-4">
-                <strong>强大的插件包功能</strong>
-              </h1>
-              <p>
-              <div class="font-size-sm">自由组合插件包，快速打造最适合你的PE</div>
-              </p>
-              <a href="#plugin" class="btn btn-outline-white btn-lg mt-4">了解详情</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="view"
-          style="background-image: url('/img/picbed/r3.jpg'); background-repeat: no-repeat; background-size: cover;">
-          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
-            <div class="text-center white-text mx-5 wow fadeIn">
-              <h1 class="mb-4">
-                <strong>优雅的主题包功能</strong>
-              </h1>
-              <p>
-              <div class="font-size-sm">在界面上实现高度自定义，我的PE就是与众不同</div>
-              </p>
-              <a href="#theme" class="btn btn-outline-white btn-lg mt-4">了解详情</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="view"
-          style="background-image: url('/img/picbed/r4.jpg'); background-repeat: no-repeat; background-size: cover;">
-          <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
-            <div class="text-center white-text mx-5 wow fadeIn">
-              <h1 class="mb-4">
-                <strong>也许是东半球第一个部分开源的PE项目</strong>
-              </h1>
-              <p>
-              <div class="font-size-sm">恪守三无原则：无广告无收费无劫持，告别流氓PE的困扰</div>
-              </p>
-              <a href="https://github.com/EdgelessPE/Edgeless" class="btn btn-outline-white btn-lg mt-4"
-                target="_blank">查看仓库</a>
+              <a
+                v-if="slide.button"
+                :href="slide.buttonUrl"
+                class="btn btn-outline-white btn-lg mt-4"
+                :target="slide.buttonTarget"
+              >{{ slide.button }}</a>
             </div>
           </div>
         </div>
@@ -93,6 +59,53 @@ import { ref, onMounted } from 'vue';
 
 const beta = ref('loading...');
 const alpha = ref('loading...');
+
+const slides = [
+  {
+    bgImage: '/img/picbed/r1.jpg',
+    title: 'edgElEss',
+    subtitle: '强大而优雅的半开源PE工具',
+    showSubtitle: true,
+    showVersion: true,
+    isTitleLarge: true,
+    button: '',
+    buttonUrl: '',
+    description: '',
+  },
+  {
+    bgImage: '/img/picbed/r2.jpg',
+    title: '强大的插件包功能',
+    description: '自由组合插件包，快速打造最适合你的PE',
+    showSubtitle: false,
+    showVersion: false,
+    isTitleLarge: false,
+    button: '了解详情',
+    buttonUrl: '#plugin',
+    buttonTarget: '',
+  },
+  {
+    bgImage: '/img/picbed/r3.jpg',
+    title: '优雅的主题包功能',
+    description: '在界面上实现高度自定义，我的PE就是与众不同',
+    showSubtitle: false,
+    showVersion: false,
+    isTitleLarge: false,
+    button: '了解详情',
+    buttonUrl: '#theme',
+    buttonTarget: '',
+  },
+  {
+    bgImage: '/img/picbed/r4.jpg',
+    title: '也许是东半球第一个部分开源的PE项目',
+    description: '恪守三无原则：无广告无收费无劫持，告别流氓PE的困扰',
+    showSubtitle: false,
+    showVersion: false,
+    isTitleLarge: false,
+    button: '查看仓库',
+    buttonUrl: 'https://github.com/EdgelessPE/Edgeless',
+    buttonTarget: '_blank',
+  },
+]
 
 const getEdgeless = async () => {
   try {

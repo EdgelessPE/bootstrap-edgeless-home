@@ -1,47 +1,17 @@
 <template>
   <footer class="page-footer text-center font-small mt-4 wow fadeIn">
     <div class="pt-4" id="py">
-      <h5 class="mb-4">友情链接</h5>
-      <div class="mb-4">
-        <span class="text-muted block mb-2">Portal</span>
+      <h5 class="mb-4">友链链接</h5>
+      <div v-for="(links, category) in friendlyLinks" :key="category" class="mb-4">
+        <span class="text-muted block mb-2">{{ category }}</span>
         <div class="flex flex-wrap justify-center gap-3">
-          <a href="https://www.firpe.cn" target="_blank" title="与Edgeless和谐共进的友商">FirPE</a>
-          <a href="https://github.com/EdgelessPE/Samare" target="_blank" title="一个具有高拓展性的实验性质PE">Samare</a>
-          <a href="https://www.hotpe.top/" target="_blank">HotPE</a>
-          <a href="https://cowpe.top/" target="_blank">CowPE</a>
-          <a href="https://www.win-compe.top/" target="_blank">ComPE</a>
-          <a href="https://windsys.whatk.me" target="_blank" title="方便好用的非盈利Project">Windsys Project</a>
-          <a href="https://third.win/" target="_blank" title="分享第三方社区 Windows 系统的部落">ThirdWIN</a>
-          <a href="https://www.coolexe.com" target="_blank" title="一个啥都有的杂货铺">阿酷杂货铺</a>
-          <a href="https://www.ghpym.com/" target="_blank" title="还原软件的本质">果核剥壳</a>
-          <a href="https://wngamebox.cn/" target="_blank" title="热爱生活和游戏，用双手创造更多乐趣!">WNGameBox</a>
-          <a href="https://my-file.cn/" target="_blank" title="热爱生活和游戏，用双手创造更多乐趣!">Myfile私有云盘</a>
-        </div>
-      </div>
-      <div>
-        <span class="text-muted block mb-2">Blog</span>
-        <div class="flex flex-wrap justify-center gap-3">
-          <a href="https://www.edgeless.top" target="_blank" title="L0serJ3rry的博客">Cno</a>
-          <a href="http://www.wuliao666.cn" target="_blank" title="今晚月色很美">今天好无聊</a>
-          <a href="https://blog.njcit.me/" target="_blank" title="喜欢卖萌和女装的的Web手">可爱多一点</a>
-          <a href="https://wanghongfeng.cn" target="_blank" title="迷失的人迷失了，相逢的人会再相逢">王洪峰</a>
-          <a href="https://mask6asok.top/" target="_blank" title="莫师傅牛逼">Mask</a>
-          <a href="https://blog.prometheuspica.top/" target="_blank">Spica</a>
-          <a href="https://bugteam.cn" target="_blank" title="不去尝试，怎会成功">Heven Kin</a>
-          <a href="https://www.whoit.top" target="_blank" title="永远年轻，永远热泪盈眶">皮毛技术君</a>
-          <a href="https://www.edgelogs.com/" target="_blank" title="面朝大海，春暖花开">BJY678</a>
-          <a href="https://cuonc.com" target="_blank" title="愿你出走半生，归来仍是少年">XiaoJun</a>
-          <a href="https://www.ygsea.com" target="_blank" title="分享心得经验，体会生活美好">阳光之海</a>
-          <a href="https://horatio.cn/" target="_blank" title="一个沙雕网友的个人博客">Horatio</a>
-          <a href="https://tokisaki.top" target="_blank" title="僕らの手には何もないけど,かわりに　つなぎあえるから">Tokisaki-Galaxy</a>
-          <a href="https://blog.dmcimi.top/" target="_blank" title="天下风云出我辈，一入江湖岁月催">Dmcimi</a>
-          <a href="https://suan2005.com/" target="_blank" title="诶嘿">酸酸</a>
-          <a href="https://rickg.cn/" target="_blank" title="#114514">Cpl.Kerry</a>
-          <a href="https://copur.xyz/" target="_blank">Copur</a>
-          <a href="https://tim-paik.github.io/" target="_blank">Tim_Paik</a>
-          <a href="https://blog.as2o3.xyz/" target="_blank">as2o3</a>
-          <a href="https://www.evassd.cn/" target="_blank">EVA存储</a>
-          <a href="https://www.tyatt.top/" target="_blank">Bill50han</a>
+          <a
+            v-for="link in links"
+            :key="link.url"
+            :href="link.url"
+            target="_blank"
+            :title="link.title"
+          >{{ link.name }}</a>
         </div>
       </div>
     </div>
@@ -73,6 +43,47 @@
     </div>
   </footer>
 </template>
+
+<script setup>
+const friendlyLinks = {
+  Portal: [
+    { name: 'FirPE', url: 'https://www.firpe.cn', title: '与Edgeless和谐共进的友商' },
+    { name: 'Samare', url: 'https://github.com/EdgelessPE/Samare', title: '一个具有高拓展性的实验性质PE' },
+    { name: 'HotPE', url: 'https://www.hotpe.top/', title: '' },
+    { name: 'CowPE', url: 'https://cowpe.top/', title: '' },
+    { name: 'ComPE', url: 'https://www.win-compe.top/', title: '' },
+    { name: 'Windsys Project', url: 'https://windsys.whatk.me', title: '方便好用的非盈利Project' },
+    { name: 'ThirdWIN', url: 'https://third.win/', title: '分享第三方社区 Windows 系统的部落' },
+    { name: '阿酷杂货铺', url: 'https://www.coolexe.com', title: '一个啥都有的杂货铺' },
+    { name: '果核剥壳', url: 'https://www.ghpym.com/', title: '还原软件的本质' },
+    { name: 'WNGameBox', url: 'https://wngamebox.cn/', title: '热爱生活和游戏，用双手创造更多乐趣!' },
+    { name: 'Myfile私有云盘', url: 'https://my-file.cn/', title: '热爱生活和游戏，用双手创造更多乐趣!' },
+  ],
+  Blog: [
+    { name: 'Cno', url: 'https://www.edgeless.top', title: 'L0serJ3rry的博客' },
+    { name: '今天好无聊', url: 'http://www.wuliao666.cn', title: '今晚月色很美' },
+    { name: '可爱多一点', url: 'https://blog.njcit.me/', title: '喜欢卖萌和女装的的Web手' },
+    { name: '王洪峰', url: 'https://wanghongfeng.cn', title: '迷失的人迷失了，相逢的人会再相逢' },
+    { name: 'Mask', url: 'https://mask6asok.top/', title: '莫师傅牛逼' },
+    { name: 'Spica', url: 'https://blog.prometheuspica.top/', title: '' },
+    { name: 'Heven Kin', url: 'https://bugteam.cn', title: '不去尝试，怎会成功' },
+    { name: '皮毛技术君', url: 'https://www.whoit.top', title: '永远年轻，永远热泪盈眶' },
+    { name: 'BJY678', url: 'https://www.edgelogs.com/', title: '面朝大海，春暖花开' },
+    { name: 'XiaoJun', url: 'https://cuonc.com', title: '愿你出走半生，归来仍是少年' },
+    { name: '阳光之海', url: 'https://www.ygsea.com', title: '分享心得经验，体会生活美好' },
+    { name: 'Horatio', url: 'https://horatio.cn/', title: '一个沙雕网友的个人博客' },
+    { name: 'Tokisaki-Galaxy', url: 'https://tokisaki.top', title: '僕らの手には何もないけど,かわりに　つなぎあえるから' },
+    { name: 'Dmcimi', url: 'https://blog.dmcimi.top/', title: '天下风云出我辈，一入江湖岁月催' },
+    { name: '酸酸', url: 'https://suan2005.com/', title: '诶嘿' },
+    { name: 'Cpl.Kerry', url: 'https://rickg.cn/', title: '#114514' },
+    { name: 'Copur', url: 'https://copur.xyz/', title: '' },
+    { name: 'Tim_Paik', url: 'https://tim-paik.github.io/', title: '' },
+    { name: 'as2o3', url: 'https://blog.as2o3.xyz/', title: '' },
+    { name: 'EVA存储', url: 'https://www.evassd.cn/', title: '' },
+    { name: 'Bill50han', url: 'https://www.tyatt.top/', title: '' },
+  ],
+}
+</script>
 
 <style scoped>
 .page-footer {

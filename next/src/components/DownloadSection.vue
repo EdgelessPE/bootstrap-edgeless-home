@@ -7,17 +7,15 @@
         </h1>
       </div>
       <div class="flex flex-wrap justify-center gap-4 my-8">
-        <a href="https://down.edgeless.top" target="_blank" class="btn btn-outline-white inline-flex gap-2 items-center"
-          role="button">
-          <i class="fas fa-arrow-circle-down"></i> 下载站
-        </a>
-        <a href="https://down.edgeless.top/?backup=1" target="_blank"
-          class="btn btn-outline-white inline-flex gap-2 items-center" role="button">
-          <i class="fas fa-download"></i> 备用站
-        </a>
-        <a href="https://down.edgeless.top/?backup=2" target="_blank"
-          class="btn btn-outline-white inline-flex gap-2 items-center" role="button">
-          <i class="fas fa-cloud"></i> 网盘分享
+        <a
+          v-for="link in downloadLinks"
+          :key="link.url"
+          :href="link.url"
+          target="_blank"
+          class="btn btn-outline-white inline-flex gap-2 items-center"
+          role="button"
+        >
+          <i :class="link.icon"></i> {{ link.text }}
         </a>
       </div>
       <p><small><i>使用Edgeless（包括其相关功能）表示您已经阅读并同意<a href="https://wiki.edgeless.top/v2/global/contract.html"
@@ -25,6 +23,14 @@
     </div>
   </section>
 </template>
+
+<script setup>
+const downloadLinks = [
+  { url: 'https://down.edgeless.top', icon: 'fas fa-arrow-circle-down', text: '下载站' },
+  { url: 'https://down.edgeless.top/?backup=1', icon: 'fas fa-download', text: '备用站' },
+  { url: 'https://down.edgeless.top/?backup=2', icon: 'fas fa-cloud', text: '网盘分享' },
+]
+</script>
 
 <style scoped>
 .btn-outline-white {
