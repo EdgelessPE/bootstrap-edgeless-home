@@ -222,17 +222,24 @@ onMounted(() => {
   right: 0 !important;
 }
 
+.carousel-control-prev:hover .carousel-control-prev-icon::before,
+.carousel-control-next:hover .carousel-control-next-icon::before {
+  color: #fff !important;
+}
+
 .carousel-control-prev-icon::before {
   font-family: 'FontAwesome' !important;
   content: '\f104' !important;
-  color: white !important;
+  color: #ddd !important;
   font-size: 2rem !important;
+  transition: color 0.3s ease;
 }
 
 .carousel-control-next-icon::before {
   font-family: 'FontAwesome' !important;
   content: '\f105' !important;
-  color: white !important;
+  color: #ddd !important;
   font-size: 2rem !important;
+  transition: color 0.3s ease;
 }
 </style>
