@@ -12,7 +12,7 @@
           <a href="https://www.win-compe.top/" target="_blank">ComPE</a>
           <a href="https://windsys.whatk.me" target="_blank" title="方便好用的非盈利Project">Windsys Project</a>
           <a href="https://third.win/" target="_blank" title="分享第三方社区 Windows 系统的部落">ThirdWIN</a>
-          <a href="/jump/coolexe.html" target="_blank" title="一个啥都有的杂货铺">阿酷杂货铺</a>
+          <a href="https://www.coolexe.com" target="_blank" title="一个啥都有的杂货铺">阿酷杂货铺</a>
           <a href="https://www.ghpym.com/" target="_blank" title="还原软件的本质">果核剥壳</a>
           <a href="https://wngamebox.cn/" target="_blank" title="热爱生活和游戏，用双手创造更多乐趣!">WNGameBox</a>
           <a href="https://my-file.cn/" target="_blank" title="热爱生活和游戏，用双手创造更多乐趣!">Myfile私有云盘</a>
@@ -23,11 +23,11 @@
         <div class="flex flex-wrap justify-center gap-3">
           <a href="https://www.edgeless.top" target="_blank" title="L0serJ3rry的博客">Cno</a>
           <a href="http://www.wuliao666.cn" target="_blank" title="今晚月色很美">今天好无聊</a>
-          <a href="/jump/403blog.html" target="_blank" title="喜欢卖萌和女装的的Web手">可爱多一点</a>
+          <a href="https://blog.njcit.me/" target="_blank" title="喜欢卖萌和女装的的Web手">可爱多一点</a>
           <a href="https://wanghongfeng.cn" target="_blank" title="迷失的人迷失了，相逢的人会再相逢">王洪峰</a>
           <a href="https://mask6asok.top/" target="_blank" title="莫师傅牛逼">Mask</a>
           <a href="https://blog.prometheuspica.top/" target="_blank">Spica</a>
-          <a href="/jump/hevenkin.html" target="_blank" title="不去尝试，怎会成功">Heven Kin</a>
+          <a href="https://bugteam.cn" target="_blank" title="不去尝试，怎会成功">Heven Kin</a>
           <a href="https://www.whoit.top" target="_blank" title="永远年轻，永远热泪盈眶">皮毛技术君</a>
           <a href="https://www.edgelogs.com/" target="_blank" title="面朝大海，春暖花开">BJY678</a>
           <a href="https://cuonc.com" target="_blank" title="愿你出走半生，归来仍是少年">XiaoJun</a>
