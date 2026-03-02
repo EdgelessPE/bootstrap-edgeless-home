@@ -192,6 +192,16 @@ a:hover {
 
   .image-wrapper {
     box-shadow: 0 20px 40px var(--black-2) !important;
+    position: relative;
+  }
+
+  .image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    pointer-events: none;
   }
 
   .pure-section .section-title,
@@ -220,6 +230,44 @@ a:hover {
   .center-image-wrapper {
     background: var(--bg-white) !important;
     box-shadow: 0 20px 50px var(--black-3) !important;
+    position: relative;
+  }
+
+  .center-image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    pointer-events: none;
+  }
+
+  .qrcode-wrapper {
+    background: var(--bg-white) !important;
+    box-shadow: 0 8px 24px var(--black-2) !important;
+    position: relative;
+  }
+
+  .qrcode-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    pointer-events: none;
+  }
+
+  .donate-card {
+    background: var(--bg-lighter) !important;
+    border-color: var(--border-color) !important;
+  }
+
+  .donate-title {
+    color: var(--text-primary) !important;
+  }
+
+  .donate-link {
+    color: var(--text-primary) !important;
   }
 
   .detail-card {
@@ -259,6 +307,24 @@ a:hover {
   }
 
   .modal-body {
+    color: var(--text-secondary) !important;
+  }
+
+  .modal-image {
+    box-shadow: 0 8px 24px var(--black-2) !important;
+    position: relative;
+  }
+
+  .modal-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.5rem;
+    pointer-events: none;
+  }
+
+  .modal-hint {
     color: var(--text-secondary) !important;
   }
 
@@ -335,5 +401,26 @@ a:hover {
   .beta-divider::before,
   .beta-divider::after {
     background: var(--border-color) !important;
+  }
+
+  #carousel-example-1z .mask {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.8) 50%,
+      rgba(0, 0, 0, 0.85) 100%
+    ) !important;
+  }
+
+  .rgba-black-light {
+    background-color: rgba(0, 0, 0, 0.75) !important;
+  }
+
+  #carousel-example-1z .carousel-indicators li {
+    border-color: var(--white-4) !important;
+  }
+
+  #carousel-example-1z .carousel-indicators li.active {
+    background: var(--white-7) !important;
   }
 }
