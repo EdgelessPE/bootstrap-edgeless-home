@@ -9,7 +9,17 @@
     "astro": "astro",
     "lint": "oxlint --vue-plugin src/",
     "lint:fix": "oxlint --vue-plugin --fix src/",
-    "format": "oxfmt --write src/"
+    "format": "oxfmt --write src/",
+    "prepare": "simple-git-hooks"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{vue,ts,tsx,js,jsx,astro}": [
+      "oxlint --vue-plugin",
+      "oxfmt --write"
+    ]
   },
   "dependencies": {
     "@astrojs/vue": "^5.1.4",
@@ -22,8 +32,10 @@
   "devDependencies": {
     "@unocss/astro": "^66.6.2",
     "@unocss/reset": "^66.6.2",
+    "lint-staged": "^16.3.1",
     "oxfmt": "^0.35.0",
     "oxlint": "^1.50.0",
+    "simple-git-hooks": "^2.13.1",
     "typescript": "^5.9.3",
     "unocss": "^66.6.2"
   }
