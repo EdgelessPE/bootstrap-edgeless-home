@@ -44,7 +44,11 @@
             <i class="fas fa-blog"></i>
             <span>BJY678的博客</span>
           </a>
-          <a href="https://edgeless.work/" target="_blank" class="backup-link">
+          <a
+            href="https://edgeless.work/"
+            target="_blank"
+            class="backup-link !bg-[#1d4ed8] !hover:bg-[#2563eb] !text-white"
+          >
             <i class="fas fa-external-link-alt"></i>
             <span>点稽前往</span>
           </a>
