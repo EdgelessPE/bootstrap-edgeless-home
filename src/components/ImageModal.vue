@@ -45,11 +45,11 @@ const handleClose = () => {
   max-width: 100%;
   max-height: 60vh;
   border-radius: 0.5rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px var(--black-1);
 }
 
 .modal-hint {
-  color: #64748b;
+  color: var(--text-secondary);
   font-size: 0.875rem;
   margin: 0;
 }

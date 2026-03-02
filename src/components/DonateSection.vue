@@ -1,6 +1,11 @@
 <template>
   <section id="donate" class="w3l-index-block3 pt-3 pb-5 donate-section">
-    <ImageModal :visible="showModal" imageSrc="/img/alipay.jpg" alt="支付宝捐赠码" @close="showModal = false" />
+    <ImageModal
+      :visible="showModal"
+      imageSrc="/img/alipay.jpg"
+      alt="支付宝捐赠码"
+      @close="showModal = false"
+    />
     <div class="donate-card">
       <div class="container py-md-3">
         <h1 class="h1 text-center donate-title h-auto">
@@ -11,12 +16,18 @@
 
         <div class="row justify-content-center">
           <div class="col-md-6 text-center mb-5">
-            <a class="donate-link" href="https://wiki.edgeless.top/v2/global/donate.html" target="_blank">
+            <a
+              class="donate-link"
+              href="https://wiki.edgeless.top/v2/global/donate.html"
+              target="_blank"
+            >
               <div class="qrcode-wrapper">
                 <img src="/img/pay.png" alt="捐赠二维码" class="img-fluid" />
               </div>
               <h4 class="donate-qr-title">支持支付宝、微信</h4>
-              <small class="d-block donate-hint">点击二维码查看捐赠列表，如需要退款请联系我们</small>
+              <small class="d-block donate-hint"
+                >点击二维码查看捐赠列表，如需要退款请联系我们</small
+              >
             </a>
           </div>
         </div>
@@ -44,17 +55,17 @@ const showModal = ref(false);
 }
 
 .donate-card {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-lighter) 100%);
   border-radius: 1.5rem;
   padding: 3rem 2rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 30px var(--black-06);
+  border: 1px solid var(--border-color);
 }
 
 .donate-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #1e293b;
+  color: var(--bg-dark-start);
   margin-bottom: 2.5rem;
   line-height: 1.4;
 }
@@ -70,10 +81,10 @@ const showModal = ref(false);
 }
 
 .qrcode-wrapper {
-  background: white;
+  background: var(--white);
   padding: 1rem;
   border-radius: 1rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px var(--black-1);
   display: inline-block;
   margin-bottom: 1rem;
   max-width: 250px;
@@ -85,42 +96,42 @@ const showModal = ref(false);
 }
 
 .donate-qr-title {
-  color: #2563eb;
+  color: var(--primary-color);
   font-weight: 600;
   margin-top: 0.5rem;
 }
 
 .donate-hint {
-  color: #64748b;
+  color: var(--text-secondary);
   font-size: 0.875rem;
 }
 
 .donate-subtitle {
-  color: #475569;
+  color: var(--text-body);
   font-weight: 500;
 }
 
 .btn-donate {
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
-  color: white;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: var(--white);
   border: none;
   padding: 0.875rem 2.5rem;
   border-radius: 2rem;
   font-weight: 500;
   font-size: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 15px var(--primary-3);
 }
 
 .btn-donate:hover {
-  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 8px 20px var(--primary-4);
 }
 
 .btn-primary {
-  background: #2f5696;
-  border-color: #2f5696;
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
 }
 
 @media (max-width: 768px) {

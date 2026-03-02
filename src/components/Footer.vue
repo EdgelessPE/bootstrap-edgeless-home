@@ -133,7 +133,7 @@ const friendlyLinks = {
     },
     { name: "Dmcimi", url: "https://blog.dmcimi.top/", title: "天下风云出我辈，一入江湖岁月催" },
     { name: "酸酸", url: "https://suan2005.com/", title: "诶嘿" },
-    { name: "Cpl.Kerry", url: "https://rickg.cn/", title: "#114514" },
+    { name: "Cpl.Kerry", url: "https://rickg.cn/", title: "var(--custom-114514)" },
     { name: "Copur", url: "https://copur.xyz/", title: "" },
     { name: "Tim_Paik", url: "https://tim-paik.github.io/", title: "" },
     { name: "as2o3", url: "https://blog.as2o3.xyz/", title: "" },
@@ -145,8 +145,8 @@ const friendlyLinks = {
 
 <style scoped>
 .footer {
-  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
-  color: white;
+  background: linear-gradient(180deg, var(--bg-dark-start) 0%, var(--bg-dark-end) 100%);
+  color: var(--white);
   text-align: center;
   font-size: 0.875rem;
   margin-top: 4rem;
@@ -162,11 +162,11 @@ const friendlyLinks = {
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  color: white;
+  color: var(--white);
 }
 
 .category-label {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--white-5);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -181,23 +181,23 @@ const friendlyLinks = {
 }
 
 .friend-links a {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--white-8);
   padding: 0.375rem 0.875rem;
   border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--white-08);
   transition: all 0.3s ease;
   font-size: 0.85rem;
   border: 1px solid transparent;
 }
 
 .friend-links a:hover {
-  color: white;
-  background: rgba(59, 130, 246, 0.3);
-  border-color: rgba(59, 130, 246, 0.5);
+  color: var(--white);
+  background: var(--blue-3);
+  border-color: var(--blue-5);
 }
 
 .footer-bottom {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--black-3);
   margin-top: 2rem;
 }
 
@@ -211,20 +211,20 @@ const friendlyLinks = {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--white-7);
 }
 
 .footer-link-item a {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--white-7);
   transition: color 0.3s ease;
 }
 
 .footer-link-item a:hover {
-  color: #60a5fa;
+  color: var(--primary-lighter);
 }
 
 .footer-link-item svg {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--white-6);
 }
 
 .footer-icp {
@@ -232,18 +232,18 @@ const friendlyLinks = {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--white-4);
   font-size: 0.8rem;
   padding-bottom: 1.5rem;
 }
 
 .footer-icp a {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--white-4);
   transition: color 0.3s ease;
 }
 
 .footer-icp a:hover {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--white-7);
 }
 
 .divider {
@@ -260,12 +260,12 @@ const friendlyLinks = {
 .beta-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1e293b;
+  color: var(--bg-dark-start);
   margin-bottom: 0.5rem;
 }
 
 .beta-subtitle {
-  color: #64748b;
+  color: var(--text-secondary);
   margin-bottom: 1.5rem;
 }
 
@@ -276,8 +276,8 @@ const friendlyLinks = {
   gap: 0.5rem;
   width: 100%;
   padding: 0.875rem 1.5rem;
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
-  color: white;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: var(--white);
   border-radius: 0.75rem;
   font-weight: 500;
   text-decoration: none;
@@ -285,16 +285,16 @@ const friendlyLinks = {
 }
 
 .beta-btn:hover {
-  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 12px var(--primary-3);
 }
 
 .beta-divider {
   display: flex;
   align-items: center;
   margin: 1.5rem 0;
-  color: #94a3b8;
+  color: var(--text-muted);
   font-size: 0.875rem;
 }
 
@@ -303,7 +303,7 @@ const friendlyLinks = {
   content: "";
   flex: 1;
   height: 1px;
-  background: #e2e8f0;
+  background: var(--border-color);
 }
 
 .beta-divider span {
@@ -311,28 +311,28 @@ const friendlyLinks = {
 }
 
 .beta-btn-secondary {
-  background: #f8fafc;
-  color: #1e293b;
-  border: 1px solid #e2e8f0;
+  background: var(--bg-light);
+  color: var(--bg-dark-start);
+  border: 1px solid var(--border-color);
 }
 
 .beta-btn-secondary:hover {
-  background: #f1f5f9;
-  border-color: #cbd5e1;
+  background: var(--bg-lighter);
+  border-color: var(--border-light);
 }
 
 .beta-qq {
   font-size: 0.75rem;
   padding: 0.125rem 0.375rem;
-  background: rgba(37, 99, 235, 0.1);
+  background: var(--primary-1);
   border-radius: 0.25rem;
-  color: #2563eb;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
 .beta-footer {
   margin-top: 1.5rem;
   font-size: 0.75rem;
-  color: #94a3b8;
+  color: var(--text-muted);
 }
 </style>

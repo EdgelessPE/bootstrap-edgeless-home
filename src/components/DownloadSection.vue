@@ -47,7 +47,7 @@
           <a
             href="https://edgeless.work/"
             target="_blank"
-            class="backup-link !bg-[linear-gradient(135deg,#2563eb,#3b82f6)] !hover:bg-[linear-gradient(135deg,#1d4ed8,#2563eb)] !text-white"
+            class="backup-link !bg-[linear-gradient(135deg,var(--primary-color),var(--primary-light))] !hover:bg-[linear-gradient(135deg,var(--primary-dark),var(--primary-color))] !text-white"
           >
             <i class="fas fa-external-link-alt"></i>
             <span>点稽前往</span>
@@ -176,14 +176,14 @@ const closeModal = () => {
 }
 
 .download-btn {
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: white;
+  border: 2px solid var(--white-3);
+  color: var(--white);
   padding: 0.875rem 2rem;
   border-radius: 0.5rem;
   font-weight: 500;
   font-size: 1rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--white-1);
   backdrop-filter: blur(4px);
   display: inline-flex;
   align-items: center;
@@ -191,11 +191,11 @@ const closeModal = () => {
 }
 
 .download-btn:hover {
-  background: white;
-  color: #2563eb;
+  background: var(--white);
+  color: var(--primary-color);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-  border-color: white;
+  box-shadow: 0 8px 25px var(--black-25);
+  border-color: var(--white);
 }
 
 .download-btn i {
@@ -203,19 +203,19 @@ const closeModal = () => {
 }
 
 .download-agreement {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--white-9);
   opacity: 0.85;
   margin-top: 1.5rem;
 }
 
 .download-agreement a {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--white-9);
   text-decoration: underline;
   transition: color 0.3s ease;
 }
 
 .download-agreement a:hover {
-  color: white;
+  color: var(--white);
 }
 
 @media (max-width: 768px) {
@@ -245,8 +245,8 @@ const closeModal = () => {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #fef3c7, #fde68a);
-  color: #92400e;
+  background: linear-gradient(135deg, var(--custom-fef3c7), var(--custom-fde68a));
+  color: var(--accent-yellow);
   padding: 0.375rem 0.875rem;
   border-radius: 9999px;
   font-size: 0.875rem;
@@ -256,13 +256,13 @@ const closeModal = () => {
 
 .sponsor-text {
   font-size: 1rem;
-  color: #1e293b;
+  color: var(--bg-dark-start);
   margin-bottom: 0.5rem;
 }
 
 .sponsor-desc {
   font-size: 0.875rem;
-  color: #64748b;
+  color: var(--text-secondary);
   margin-bottom: 0;
 }
 
@@ -278,16 +278,16 @@ const closeModal = () => {
   justify-content: center;
   gap: 0.75rem;
   padding: 0.875rem 1.5rem;
-  background: #f8fafc;
-  color: #1e293b;
+  background: var(--bg-light);
+  color: var(--bg-dark-start);
   border-radius: 0.75rem;
   font-weight: 500;
   transition: all 0.2s ease;
 }
 
 .backup-link:hover {
-  background: #2563eb;
-  color: white;
+  background: var(--primary-color);
+  color: var(--white);
 }
 
 .cloud-content {
@@ -298,7 +298,7 @@ const closeModal = () => {
 
 .cloud-section {
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .cloud-section:last-child {
@@ -312,17 +312,17 @@ const closeModal = () => {
   gap: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
-  color: #1e293b;
+  color: var(--bg-dark-start);
   margin-bottom: 0.5rem;
 }
 
 .cloud-section-title i {
-  color: #2563eb;
+  color: var(--primary-color);
 }
 
 .cloud-desc {
   font-size: 0.875rem;
-  color: #64748b;
+  color: var(--text-secondary);
   margin-bottom: 0.75rem;
 }
 
@@ -337,8 +337,8 @@ const closeModal = () => {
   align-items: center;
   gap: 0.5rem;
   padding: 0.625rem 1rem;
-  background: #f8fafc;
-  color: #1e293b;
+  background: var(--bg-light);
+  color: var(--bg-dark-start);
   border-radius: 0.5rem;
   font-size: 0.875rem;
   font-weight: 500;
@@ -346,22 +346,22 @@ const closeModal = () => {
 }
 
 .cloud-btn:hover {
-  background: #2563eb;
-  color: white;
+  background: var(--primary-color);
+  color: var(--white);
 }
 
 .cloud-btn .code {
   font-size: 0.75rem;
   padding: 0.125rem 0.375rem;
-  background: rgba(37, 99, 235, 0.1);
+  background: var(--primary-1);
   border-radius: 0.25rem;
-  color: #2563eb;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
 .cloud-btn:hover .code {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
+  background: var(--white-2);
+  color: var(--white);
 }
 
 .cloud-btn-archived {
@@ -373,8 +373,8 @@ const closeModal = () => {
   align-items: center;
   gap: 0.25rem;
   padding: 0.125rem 0.5rem;
-  background: linear-gradient(135deg, #fecaca, #fca5a5);
-  color: #b91c1c;
+  background: linear-gradient(135deg, var(--warning-bg-light), var(--custom-fca5a5));
+  color: var(--accent-red);
   border-radius: 9999px;
   font-size: 0.7rem;
   font-weight: 600;
@@ -382,7 +382,7 @@ const closeModal = () => {
 }
 
 .cloud-btn-archived:hover .archived-badge {
-  background: linear-gradient(135deg, #f87171, #ef4444);
-  color: white;
+  background: linear-gradient(135deg, var(--warning-red-light), var(--warning-red));
+  color: var(--white);
 }
 </style>

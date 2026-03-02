@@ -1,12 +1,21 @@
 <template>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"
-    :class="{ 'top-nav-collapse': isScrolled }">
+  <nav
+    class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"
+    :class="{ 'top-nav-collapse': isScrolled }"
+  >
     <div class="container">
       <a class="navbar-brand" href="#">
         <span class="font-earth brand-text">edgElEss</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -17,9 +26,11 @@
         </ul>
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a :href="downloadLink.href"
-              class="text-[#ffffffe6] hover:text-[#ffffffe6] font-500 px-1 py-1.5 border border-light rounded waves-effect waves-light px-3">{{
-                downloadLink.text }}</a>
+            <a
+              :href="downloadLink.href"
+              class="text-white hover:text-white font-500 px-1 py-1.5 border border-light rounded waves-effect waves-light px-3"
+              >{{ downloadLink.text }}</a
+            >
           </li>
         </ul>
       </div>
@@ -65,9 +76,9 @@ onUnmounted(() => {
 }
 
 .navbar.top-nav-collapse {
-  background: rgba(28, 35, 49, 0.95) !important;
+  background: var(--navbar-bg-95) !important;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px var(--black-15);
   padding: 0.5rem 0;
 }
 
@@ -77,7 +88,7 @@ onUnmounted(() => {
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--white-9);
   font-weight: 500;
   font-size: 0.95rem;
   padding: 0.5rem 1rem !important;
@@ -92,14 +103,14 @@ onUnmounted(() => {
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  background: linear-gradient(90deg, var(--primary-light), var(--primary-lighter));
   transition: all 0.3s ease;
   transform: translateX(-50%);
   border-radius: 1px;
 }
 
 .nav-link:hover {
-  color: #fff;
+  color: var(--white);
 }
 
 .nav-link:hover::after {
@@ -110,7 +121,7 @@ onUnmounted(() => {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  background: white;
+  background: var(--white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -127,7 +138,7 @@ onUnmounted(() => {
 
 @media (max-width: 991px) {
   .navbar-collapse {
-    background: rgba(28, 35, 49, 0.98);
+    background: var(--navbar-bg-98);
     padding: 1rem;
     border-radius: 0 0 0.75rem 0.75rem;
     margin-top: 0.5rem;

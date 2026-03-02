@@ -6,7 +6,7 @@
 
 - **框架**: Astro 5.x + Vue 3 集成
 - **语言**: TypeScript
-- **样式**: UnoCSS (utility-first) + Bootstrap 5 + 自定义 CSS
+- **样式**: UnoCSS (utility-first) + LESS + Bootstrap 5 + 自定义 CSS
 - **包管理器**: pnpm
 - **代码检查**: oxlint (Vue 插件)
 - **代码格式化**: oxfmt
@@ -45,7 +45,8 @@ pnpm format           # 使用 oxfmt 格式化代码
 src/
 ├── components/       # Vue 组件 (.vue 文件)
 ├── layouts/          # Astro 布局 (.astro 文件)
-└── pages/            # Astro 页面 (.astro 文件)
+├── pages/            # Astro 页面 (.astro 文件)
+└── styles/           # 全局样式 (.less 文件)
 ```
 
 ### Vue 组件
@@ -106,8 +107,11 @@ const { title } = Astro.props;
 ### CSS/样式
 
 - **优先使用 UnoCSS 工具类**，只有在 UnoCSS 无法实现的情况下才使用 `<style scoped>`
+- **LESS 用于全局样式**：全局变量和样式放在 `src/styles/` 目录
+  - `tokens.less` - 设计令牌（颜色、间距、字体、阴影等 CSS 变量）
+  - `global.less` - 全局样式（重置、基本样式、通用组件）
+- 在 Astro 文件中导入 LESS：`import "../styles/tokens.less";`
 - 模板中使用 kebab-case 命名 CSS 类
-- 全局 CSS 变量定义在 `src/layouts/Layout.astro` 中
 - 利用 `uno.config.ts` 中的 shortcuts 定义常用样式组合
 
 ### 命名规范
@@ -172,6 +176,7 @@ import Navbar from '../components/Navbar.vue';
 - `vue` - Vue 3 框架
 - `@astrojs/vue` - Astro Vue 集成
 - `@unocss/astro` - Astro 的 UnoCSS
+- `less` - CSS 预处理器
 - `bootstrap` - CSS 框架
 - `animate.css` - CSS 动画
 - `@fortawesome/fontawesome-free` - 图标

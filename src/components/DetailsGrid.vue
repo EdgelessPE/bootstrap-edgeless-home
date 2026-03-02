@@ -117,19 +117,19 @@ const features = [
 .section-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #1e293b;
+  color: var(--bg-dark-start);
 }
 
 .section-divider {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-lighter));
   border-radius: 2px;
   margin: 0 auto 2.5rem;
 }
 
 .detail-card {
-  background: white;
+  background: var(--white);
   border-radius: 0.75rem;
   padding: 1.5rem;
   height: 100%;
@@ -137,13 +137,13 @@ const features = [
   flex-direction: column;
   align-items: flex-start;
   transition: all 0.3s ease;
-  border: 1px solid #f1f5f9;
+  border: 1px solid var(--bg-lighter);
 }
 
 .detail-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px var(--black-08);
   transform: translateY(-4px);
-  border-color: #e2e8f0;
+  border-color: var(--border-color);
 }
 
 .detail-icon {
@@ -152,7 +152,7 @@ const features = [
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-lighter));
   border-radius: 0.75rem;
   margin-bottom: 1rem;
   flex-shrink: 0;
@@ -160,7 +160,7 @@ const features = [
 
 .detail-icon i {
   font-size: 1.25rem;
-  color: white;
+  color: var(--white);
 }
 
 .detail-content {
@@ -169,20 +169,20 @@ const features = [
 
 .feature-title {
   font-weight: 600;
-  color: #1e293b;
+  color: var(--bg-dark-start);
   margin-bottom: 0.5rem;
   font-size: 1rem;
 }
 
 .grey-text {
-  color: #64748b;
+  color: var(--text-secondary);
   font-size: 0.875rem;
   line-height: 1.6;
   margin: 0;
 }
 
 .indigo-text {
-  color: #2563eb !important;
+  color: var(--primary-color) !important;
 }
 
 @media (max-width: 768px) {
