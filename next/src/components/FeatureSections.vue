@@ -5,7 +5,7 @@
       <section class="w3l-index-block3">
         <div class="py-md-5">
           <div class="container py-md-3">
-            <h2 class="h2 text-center mb-5 section-title">谁说PE只能满足维护？</h2>
+            <h2 class="h2 text-center mb-5 section-title mt-4">谁说PE只能满足维护？</h2>
             <div class="section-divider"></div>
             <div class="row align-items-center">
               <div class="col-md-6 mb-4">
@@ -16,11 +16,7 @@
               </div>
               <div class="col-md-6 mb-4">
                 <div class="image-wrapper">
-                  <img
-                    :src="introSection.image"
-                    class="img-fluid shadow-z-depth-2 rounded"
-                    alt=""
-                  />
+                  <img :src="introSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
                 </div>
               </div>
             </div>
@@ -109,11 +105,7 @@
         <div class="section-divider"></div>
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <div
-              v-for="(feature, index) in performanceFeatures"
-              :key="index"
-              class="feature-card mb-4"
-            >
+            <div v-for="(feature, index) in performanceFeatures" :key="index" class="feature-card mb-4">
               <div class="feature-icon-wrapper">
                 <i :class="[feature.icon, 'fa-lg']" :style="{ color: feature.color }"></i>
               </div>

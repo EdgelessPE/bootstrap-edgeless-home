@@ -1,11 +1,6 @@
 <template>
   <section id="donate" class="w3l-index-block3 pt-3 pb-5 donate-section">
-    <ImageModal
-      :visible="showModal"
-      imageSrc="/img/alipay.jpg"
-      alt="支付宝捐赠码"
-      @close="showModal = false"
-    />
+    <ImageModal :visible="showModal" imageSrc="/img/alipay.jpg" alt="支付宝捐赠码" @close="showModal = false" />
     <div class="donate-card">
       <div class="container py-md-3">
         <h1 class="h1 text-center donate-title h-auto">
@@ -16,24 +11,18 @@
 
         <div class="row justify-content-center">
           <div class="col-md-6 text-center mb-5">
-            <a
-              class="donate-link"
-              href="https://wiki.edgeless.top/v2/global/donate.html"
-              target="_blank"
-            >
+            <a class="donate-link" href="https://wiki.edgeless.top/v2/global/donate.html" target="_blank">
               <div class="qrcode-wrapper">
                 <img src="/img/pay.png" alt="捐赠二维码" class="img-fluid" />
               </div>
               <h4 class="donate-qr-title">支持支付宝、微信</h4>
-              <small class="d-block donate-hint"
-                >点击二维码查看捐赠列表，如需要退款请联系我们</small
-              >
+              <small class="d-block donate-hint">点击二维码查看捐赠列表，如需要退款请联系我们</small>
             </a>
           </div>
         </div>
 
         <div class="text-center mt-4">
-          <h3 class="h4 mb-4 donate-subtitle">扫码付费过于直白？我们提供了额外的捐赠方式</h3>
+          <h3 class="h4 mb-4 donate-subtitle h-auto">扫码付费过于直白？我们提供了额外的捐赠方式</h3>
           <button class="btn btn-donate" @click="showModal = true">让我康康</button>
         </div>
       </div>
