@@ -24,7 +24,7 @@
       </p>
     </div>
 
-    <ContentModal :visible="modalType !== null" :title="modalTitle" @close="closeModal">
+    <ContentModal :visible="isModalVisible" :title="modalTitle" @close="closeModal">
       <div v-if="modalType === 'backup'" class="backup-content">
         <div class="backup-sponsor">
           <div class="sponsor-badge">
@@ -112,17 +112,27 @@ const downloadLinks = [
 
 type ModalType = "backup" | "cloud" | null;
 const modalType = ref<ModalType>(null);
+const isModalClosing = ref(false);
 
 const modalTitle = computed(() => {
   return modalType.value === "backup" ? "备用下载站" : modalType.value === "cloud" ? "网盘分享" : "";
 });
 
+const isModalVisible = computed(() => {
+  return modalType.value !== null && !isModalClosing.value;
+});
+
 const openModal = (type: "backup" | "cloud") => {
+  isModalClosing.value = false;
   modalType.value = type;
 };
 
 const closeModal = () => {
-  modalType.value = null;
+  isModalClosing.value = true;
+  setTimeout(() => {
+    modalType.value = null;
+    isModalClosing.value = false;
+  }, 250);
 };
 </script>
 

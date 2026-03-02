@@ -1,14 +1,14 @@
 <template>
   <Teleport to="body">
     <div
-      v-if="visible"
       class="modal-overlay"
-      @click="close"
+      :class="{ 'is-visible': visible }"
+      @click="handleClose"
     >
       <div class="modal-container" @click.stop>
         <div class="modal-header">
           <h3 class="modal-title">{{ title }}</h3>
-          <button class="modal-close" @click="close" aria-label="关闭">
+          <button class="modal-close" @click="handleClose" aria-label="关闭">
             <i class="fas fa-times"></i>
           </button>
         </div>
@@ -26,13 +26,13 @@ interface Props {
   title: string;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
 
 const emit = defineEmits<{
   close: [];
 }>();
 
-const close = () => {
+const handleClose = () => {
   emit("close");
 };
 </script>
@@ -48,16 +48,14 @@ const close = () => {
   justify-content: center;
   z-index: 9999;
   padding: 1rem;
-  animation: fadeIn 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.modal-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .modal-container {
@@ -70,18 +68,14 @@ const close = () => {
   flex-direction: column;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   overflow: hidden;
-  animation: slideIn 0.25s ease;
+  transform: scale(0.95) translateY(10px);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-@keyframes slideIn {
-  from {
-    transform: scale(0.95) translateY(10px);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
+.modal-overlay.is-visible .modal-container {
+  transform: scale(1) translateY(0);
+  opacity: 1;
 }
 
 .modal-header {
@@ -136,16 +130,11 @@ const close = () => {
     max-height: 85vh;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    animation: slideUp 0.25s ease;
+    transform: translateY(100%);
   }
 
-  @keyframes slideUp {
-    from {
-      transform: translateY(100%);
-    }
-    to {
-      transform: translateY(0);
-    }
+  .modal-overlay.is-visible .modal-container {
+    transform: translateY(0);
   }
 }
 </style>
