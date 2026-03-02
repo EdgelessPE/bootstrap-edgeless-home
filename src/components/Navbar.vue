@@ -26,6 +26,9 @@
         </ul>
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
+            <ThemeToggle client:load />
+          </li>
+          <li class="nav-item">
             <a
               :href="downloadLink.href"
               class="text-white hover:text-white font-500 px-1 py-1.5 border border-light rounded waves-effect waves-light px-3"
@@ -40,6 +43,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
+import ThemeToggle from "./ThemeToggle.vue";
 
 const isScrolled = ref(false);
 
