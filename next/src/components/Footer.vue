@@ -1,12 +1,12 @@
 <template>
   <footer class="footer wow-fadeIn">
-    <div class="footer-main pt-5" id="py">
-      <h5 class="footer-title mb-4">友链链接</h5>
+    <div class="footer-main pt-4" id="py">
+      <h5 class="footer-title mb-4">友情链接</h5>
       <div v-for="(links, category) in friendlyLinks" :key="category" class="mb-4">
         <span class="category-label d-block mb-2">{{ category }}</span>
         <div class="friend-links">
           <a v-for="link in links" :key="link.url" :href="link.url" target="_blank" :title="link.title">{{ link.name
-          }}</a>
+            }}</a>
         </div>
       </div>
     </div>
@@ -193,7 +193,7 @@ const friendlyLinks = {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .friend-links a {
     font-size: 0.75rem;
     padding: 0.25rem 0.625rem;
