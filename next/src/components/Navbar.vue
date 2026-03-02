@@ -1,12 +1,21 @@
 <template>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"
-    :class="{ 'top-nav-collapse': isScrolled }">
+  <nav
+    class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"
+    :class="{ 'top-nav-collapse': isScrolled }"
+  >
     <div class="container">
       <a class="navbar-brand" href="#">
         <span class="font-earth brand-text">edgElEss</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -17,9 +26,11 @@
         </ul>
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a :href="downloadLink.href"
-              class="text-[#ffffffe6] hover:text-[#ffffffe6] font-500 px-1 py-1.5 border border-light rounded waves-effect waves-light px-3">{{
-                downloadLink.text }}</a>
+            <a
+              :href="downloadLink.href"
+              class="text-[#ffffffe6] hover:text-[#ffffffe6] font-500 px-1 py-1.5 border border-light rounded waves-effect waves-light px-3"
+              >{{ downloadLink.text }}</a
+            >
           </li>
         </ul>
       </div>
@@ -28,19 +39,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted } from "vue";
 
 const isScrolled = ref(false);
 
 const navLinks = [
-  { text: '首页', href: '#' },
-  { text: '特性', href: '#feature' },
-  { text: '捐赠', href: '#donate' },
-  { text: '文档', href: 'https://wiki.edgeless.top/v2', target: '_blank' },
-  { text: 'GitHub', href: 'https://github.com/EdgelessPE/Edgeless', target: '_blank' },
-]
+  { text: "首页", href: "#" },
+  { text: "特性", href: "#feature" },
+  { text: "捐赠", href: "#donate" },
+  { text: "文档", href: "https://wiki.edgeless.top/v2", target: "_blank" },
+  { text: "GitHub", href: "https://github.com/EdgelessPE/Edgeless", target: "_blank" },
+];
 
-const downloadLink = { text: '下载', href: '#download' }
+const downloadLink = { text: "下载", href: "#download" };
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
@@ -48,11 +59,11 @@ const handleScroll = () => {
 
 onMounted(() => {
   handleScroll();
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener("scroll", handleScroll);
 });
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener("scroll", handleScroll);
 });
 </script>
 
@@ -86,7 +97,7 @@ onUnmounted(() => {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;

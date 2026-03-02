@@ -1,28 +1,45 @@
 <template>
   <div id="carousel-example-1z" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <ol class="carousel-indicators">
-      <li v-for="(slide, index) in slides" :key="index" data-bs-target="#carousel-example-1z" :data-bs-slide-to="index"
-        :class="{ active: index === 0 }"></li>
+      <li
+        v-for="(slide, index) in slides"
+        :key="index"
+        data-bs-target="#carousel-example-1z"
+        :data-bs-slide-to="index"
+        :class="{ active: index === 0 }"
+      ></li>
     </ol>
     <div class="carousel-inner" role="listbox">
-      <div v-for="(slide, index) in slides" :key="index" class="carousel-item" :class="{ active: index === 0 }">
-        <div class="view"
-          :style="`background-image: url('${slide.bgImage}'); background-repeat: no-repeat; background-size: cover;`">
+      <div
+        v-for="(slide, index) in slides"
+        :key="index"
+        class="carousel-item"
+        :class="{ active: index === 0 }"
+      >
+        <div
+          class="view"
+          :style="`background-image: url('${slide.bgImage}'); background-repeat: no-repeat; background-size: cover;`"
+        >
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
             <div class="text-center white-text mx-5 wow-fadeIn">
               <h1 class="mb-4 text-white" :class="{ 'font-earth': slide.isTitleLarge }">
                 <strong v-html="slide.title"></strong>
               </h1>
-              <p :class="{ 'mb-4 text-white d-none d-md-block': slide.showSubtitle }">
+              <div :class="{ 'mb-4 text-white d-none d-md-block': slide.showSubtitle }">
                 <strong v-if="slide.showSubtitle">{{ slide.subtitle }}</strong>
-              <div v-else class="font-size-sm text-white" v-html="slide.description"></div>
-              </p>
+                <div v-else class="font-size-sm text-white" v-html="slide.description"></div>
+              </div>
               <div v-if="slide.showVersion" id="version" class="flex gap-4 font-size-sm">
                 <div>Beta公测版本：{{ beta }}</div>
                 <div v-if="alpha !== '0.0.0'">Alpha内测版本：{{ alpha }}</div>
               </div>
-              <a v-if="slide.button" :href="slide.buttonUrl" class="btn btn-outline-white btn-lg mt-4"
-                :target="slide.buttonTarget">{{ slide.button }}</a>
+              <a
+                v-if="slide.button"
+                :href="slide.buttonUrl"
+                class="btn btn-outline-white btn-lg mt-4"
+                :target="slide.buttonTarget"
+                >{{ slide.button }}</a
+              >
             </div>
           </div>
         </div>
@@ -41,73 +58,73 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from "vue";
 
-const beta = ref('loading...');
-const alpha = ref('loading...');
+const beta = ref("loading...");
+const alpha = ref("loading...");
 
 const slides = [
   {
-    bgImage: '/img/picbed/r1.jpg',
-    title: 'edgElEss',
-    subtitle: '强大而优雅的半开源PE工具',
+    bgImage: "/img/picbed/r1.jpg",
+    title: "edgElEss",
+    subtitle: "强大而优雅的半开源PE工具",
     showSubtitle: true,
     showVersion: true,
     isTitleLarge: true,
-    button: '',
-    buttonUrl: '',
-    description: '',
+    button: "",
+    buttonUrl: "",
+    description: "",
   },
   {
-    bgImage: '/img/picbed/r2.jpg',
-    title: '强大的插件包功能',
-    description: '自由组合插件包，快速打造最适合你的PE',
+    bgImage: "/img/picbed/r2.jpg",
+    title: "强大的插件包功能",
+    description: "自由组合插件包，快速打造最适合你的PE",
     showSubtitle: false,
     showVersion: false,
     isTitleLarge: false,
-    button: '了解详情',
-    buttonUrl: '#plugin',
-    buttonTarget: '',
+    button: "了解详情",
+    buttonUrl: "#plugin",
+    buttonTarget: "",
   },
   {
-    bgImage: '/img/picbed/r3.jpg',
-    title: '优雅的主题包功能',
-    description: '在界面上实现高度自定义，我的PE就是与众不同',
+    bgImage: "/img/picbed/r3.jpg",
+    title: "优雅的主题包功能",
+    description: "在界面上实现高度自定义，我的PE就是与众不同",
     showSubtitle: false,
     showVersion: false,
     isTitleLarge: false,
-    button: '了解详情',
-    buttonUrl: '#theme',
-    buttonTarget: '',
+    button: "了解详情",
+    buttonUrl: "#theme",
+    buttonTarget: "",
   },
   {
-    bgImage: '/img/picbed/r4.jpg',
-    title: '也许是东半球第一个部分开源的PE项目',
-    description: '恪守三无原则：无广告无收费无劫持，告别流氓PE的困扰',
+    bgImage: "/img/picbed/r4.jpg",
+    title: "也许是东半球第一个部分开源的PE项目",
+    description: "恪守三无原则：无广告无收费无劫持，告别流氓PE的困扰",
     showSubtitle: false,
     showVersion: false,
     isTitleLarge: false,
-    button: '查看仓库',
-    buttonUrl: 'https://github.com/EdgelessPE/Edgeless',
-    buttonTarget: '_blank',
+    button: "查看仓库",
+    buttonUrl: "https://github.com/EdgelessPE/Edgeless",
+    buttonTarget: "_blank",
   },
-]
+];
 
 const getEdgeless = async () => {
   try {
-    const res = await fetch('https://legacy.edgeless.top/api/v2/info/iso_version');
+    const res = await fetch("https://legacy.edgeless.top/api/v2/info/iso_version");
     const ver = await res.text();
     beta.value = ver;
   } catch (e) {
-    beta.value = '获取失败';
+    beta.value = "获取失败";
   }
 
   try {
-    const res = await fetch('https://legacy.edgeless.top/api/v2/alpha/data?token=そうだよ');
+    const res = await fetch("https://legacy.edgeless.top/api/v2/alpha/data?token=そうだよ");
     const json = await res.json();
     alpha.value = json.version;
   } catch (e) {
-    alpha.value = '0.0.0';
+    alpha.value = "0.0.0";
   }
 };
 
@@ -146,10 +163,12 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.2) 0%,
-      rgba(0, 0, 0, 0.4) 50%,
-      rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 }
 
 .rgba-black-light {
@@ -274,16 +293,16 @@ onMounted(() => {
 }
 
 .carousel-control-prev-icon::before {
-  font-family: 'FontAwesome' !important;
-  content: '\f104' !important;
+  font-family: "FontAwesome" !important;
+  content: "\f104" !important;
   color: #fff !important;
   font-size: 1.75rem !important;
   transition: color 0.3s ease;
 }
 
 .carousel-control-next-icon::before {
-  font-family: 'FontAwesome' !important;
-  content: '\f105' !important;
+  font-family: "FontAwesome" !important;
+  content: "\f105" !important;
   color: #fff !important;
   font-size: 1.75rem !important;
   transition: color 0.3s ease;

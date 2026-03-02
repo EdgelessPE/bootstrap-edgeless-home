@@ -1,13 +1,23 @@
 <template>
   <Teleport to="body">
     <Transition name="modal">
-      <div v-if="visible" class="fixed top-0 left-0 w-full h-full bg-black/70 flex justify-center items-center z-9999"
-        @click="close">
+      <div
+        v-if="visible"
+        class="fixed top-0 left-0 w-full h-full bg-black/70 flex justify-center items-center z-9999"
+        @click="close"
+      >
         <div class="relative bg-white rounded-lg p-15px" @click.stop>
           <button
             class="absolute top-2 right-1 z-1 text-24px text-gray-400 bg-transparent border-none cursor-pointer leading-1"
-            @click="close">×</button>
-          <img :src="imageSrc" :alt="alt" class="block w-auto h-auto max-w-80vw max-h-80vh rounded" />
+            @click="close"
+          >
+            ×
+          </button>
+          <img
+            :src="imageSrc"
+            :alt="alt"
+            class="block w-auto h-auto max-w-80vw max-h-80vh rounded"
+          />
         </div>
       </div>
     </Transition>
@@ -16,21 +26,21 @@
 
 <script setup lang="ts">
 interface Props {
-  visible?: boolean
-  imageSrc: string
-  alt?: string
+  visible?: boolean;
+  imageSrc: string;
+  alt?: string;
 }
 
 withDefaults(defineProps<Props>(), {
   visible: false,
-  alt: ''
-})
+  alt: "",
+});
 
-const emit = defineEmits(['close'])
+const emit = defineEmits(["close"]);
 
 const close = () => {
-  emit('close')
-}
+  emit("close");
+};
 </script>
 
 <style>
