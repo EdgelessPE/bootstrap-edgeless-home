@@ -9,7 +9,8 @@
     <div class="donate-card">
       <div class="container py-md-3">
         <h1 class="h1 text-center donate-title h-auto">
-          如果您认可<span class="font-earth">edgElEss</span>
+          如果您认可
+          <div class="font-earth inline" style="color: var(--text-primary)">edgElEss</div>
           <br />
           请帮助我们继续前行
         </h1>

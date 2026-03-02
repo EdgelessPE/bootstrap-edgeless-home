@@ -4,8 +4,9 @@
     <div class="card-body text-white text-center py-5 px-5 my-5">
       <div class="mb-4">
         <h1 class="h1 h-auto download-title">
-          <strong>立即获取</strong> <span class="font-earth">edgElEss</span
-          ><strong>及其组件</strong>
+          <strong>立即获取</strong>
+          <div class="font-earth inline">edgElEss</div>
+          <strong>及其组件</strong>
         </h1>
       </div>
       <div class="download-buttons my-8">
@@ -20,14 +21,17 @@
         </button>
       </div>
       <p class="download-agreement">
-        <small
-          ><i
-            >使用Edgeless（包括其相关功能）表示您已经阅读并同意<a
+        <small style="color: var(--white-9)">
+          <i
+            >使用Edgeless（包括其相关功能）表示您已经阅读并同意
+            <a
+              style="color: var(--white-9)"
               href="https://wiki.edgeless.top/v2/global/contract.html"
               target="_blank"
-              >手册中的用户协议</a
-            ></i
-          ></small
+            >
+              手册中的用户协议
+            </a>
+          </i></small
         >
       </p>
     </div>

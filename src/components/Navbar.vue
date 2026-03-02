@@ -24,10 +24,8 @@
             <a class="nav-link" :href="link.href" :target="link.target">{{ link.text }}</a>
           </li>
         </ul>
+        <ThemeToggle client:load />
         <ul class="navbar-nav nav-flex-icons">
-          <li class="nav-item">
-            <ThemeToggle client:load />
-          </li>
           <li class="nav-item">
             <a
               :href="downloadLink.href"

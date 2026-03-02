@@ -1,5 +1,5 @@
 <template>
-  <button class="theme-toggle" @click="cycleTheme" :title="themeTitle" aria-label="切换主题">
+  <button class="theme-toggle mr-2" @click="cycleTheme" :title="themeTitle" aria-label="切换主题">
     <i :class="themeIcon" class="theme-icon"></i>
   </button>
 </template>
