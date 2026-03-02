@@ -6,8 +6,8 @@
         <span class="font-earth brand-text">edgElEss</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span
-          class="navbar-toggler-icon"></span>
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
@@ -19,7 +19,7 @@
           <li class="nav-item">
             <a :href="downloadLink.href"
               class="text-[#ffffffe6] hover:text-[#ffffffe6] font-500 px-1 py-1.5 border border-light rounded waves-effect waves-light px-3">{{
-              downloadLink.text }}</a>
+                downloadLink.text }}</a>
           </li>
         </ul>
       </div>
