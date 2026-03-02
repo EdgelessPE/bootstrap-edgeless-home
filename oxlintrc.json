@@ -1,0 +1,26 @@
+{
+  "plugins": [
+    "vue"
+  ],
+  "include": [
+    "**/*.vue",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.vue"
+      ],
+      "plugins": [
+        "vue"
+      ]
+    }
+  ],
+  "rules": {
+    "noUnusedVariables": "warn",
+    "noConsole": "warn"
+  }
+}

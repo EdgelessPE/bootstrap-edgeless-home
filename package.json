@@ -1,0 +1,42 @@
+{
+  "name": "edgeless-home",
+  "type": "module",
+  "version": "2.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "oxlint --vue-plugin src/",
+    "lint:fix": "oxlint --vue-plugin --fix src/",
+    "format": "oxfmt --write src/",
+    "prepare": "simple-git-hooks"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{vue,ts,tsx,js,jsx,astro}": [
+      "oxlint --vue-plugin",
+      "oxfmt --write"
+    ]
+  },
+  "dependencies": {
+    "@astrojs/vue": "^5.1.4",
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "animate.css": "^4.1.1",
+    "astro": "^5.17.1",
+    "bootstrap": "^5.3.8",
+    "vue": "^3.5.29"
+  },
+  "devDependencies": {
+    "@unocss/astro": "^66.6.2",
+    "@unocss/reset": "^66.6.2",
+    "lint-staged": "^16.3.1",
+    "oxfmt": "^0.35.0",
+    "oxlint": "^1.50.0",
+    "simple-git-hooks": "^2.13.1",
+    "typescript": "^5.9.3",
+    "unocss": "^66.6.2"
+  }
+}
