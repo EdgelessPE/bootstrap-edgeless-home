@@ -2,7 +2,7 @@
   <Teleport to="body">
     <div
       class="modal-overlay"
-      :class="{ 'is-visible': visible }"
+      :class="{ 'is-visible': visible && !isClosing }"
       @click="handleClose"
     >
       <div class="modal-container" @click.stop>
@@ -21,6 +21,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref, watch } from "vue";
+
 interface Props {
   visible: boolean;
   title: string;
@@ -32,9 +34,22 @@ const emit = defineEmits<{
   close: [];
 }>();
 
+const isClosing = ref(false);
+
 const handleClose = () => {
-  emit("close");
+  if (isClosing.value) return;
+  isClosing.value = true;
+  setTimeout(() => {
+    isClosing.value = false;
+    emit("close");
+  }, 250);
 };
+
+watch(() => props.visible, (newVal) => {
+  if (newVal) {
+    isClosing.value = false;
+  }
+});
 </script>
 
 <style scoped>

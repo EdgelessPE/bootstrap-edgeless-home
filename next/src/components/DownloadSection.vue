@@ -112,27 +112,21 @@ const downloadLinks = [
 
 type ModalType = "backup" | "cloud" | null;
 const modalType = ref<ModalType>(null);
-const isModalClosing = ref(false);
 
 const modalTitle = computed(() => {
   return modalType.value === "backup" ? "备用下载站" : modalType.value === "cloud" ? "网盘分享" : "";
 });
 
 const isModalVisible = computed(() => {
-  return modalType.value !== null && !isModalClosing.value;
+  return modalType.value !== null;
 });
 
 const openModal = (type: "backup" | "cloud") => {
-  isModalClosing.value = false;
   modalType.value = type;
 };
 
 const closeModal = () => {
-  isModalClosing.value = true;
-  setTimeout(() => {
-    modalType.value = null;
-    isModalClosing.value = false;
-  }, 250);
+  modalType.value = null;
 };
 </script>
 
