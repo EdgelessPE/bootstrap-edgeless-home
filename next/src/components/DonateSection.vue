@@ -1,5 +1,5 @@
 <template>
-  <section class="w3l-index-block3 pt-3 pb-5 donate-section">
+  <section id="donate" class="w3l-index-block3 pt-3 pb-5 donate-section">
     <ImageModal :visible="showModal" imageSrc="/img/alipay.jpg" alt="支付宝捐赠码" @close="showModal = false" />
     <div class="donate-card">
       <div class="container py-md-3">
