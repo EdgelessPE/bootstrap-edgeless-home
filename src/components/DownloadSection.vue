@@ -4,7 +4,8 @@
     <div class="card-body text-white text-center py-5 px-5 my-5">
       <div class="mb-4">
         <h1 class="h1 h-auto download-title">
-          <strong>立即获取</strong> <span class="font-earth">edgElEss</span><strong>及其组件</strong>
+          <strong>立即获取</strong> <span class="font-earth">edgElEss</span
+          ><strong>及其组件</strong>
         </h1>
       </div>
       <div class="download-buttons my-8">
@@ -19,17 +20,22 @@
         </button>
       </div>
       <p class="download-agreement">
-        <small><i>使用Edgeless（包括其相关功能）表示您已经阅读并同意<a href="https://wiki.edgeless.top/v2/global/contract.html"
-              target="_blank">手册中的用户协议</a></i></small>
+        <small
+          ><i
+            >使用Edgeless（包括其相关功能）表示您已经阅读并同意<a
+              href="https://wiki.edgeless.top/v2/global/contract.html"
+              target="_blank"
+              >手册中的用户协议</a
+            ></i
+          ></small
+        >
       </p>
     </div>
 
     <ContentModal :visible="isModalVisible" :title="modalTitle" @close="closeModal">
       <div v-if="modalType === 'backup'" class="backup-content">
         <div class="backup-sponsor">
-          <div class="sponsor-badge">
-            <i class="fas fa-heart"></i> 赞助支持
-          </div>
+          <div class="sponsor-badge"><i class="fas fa-heart"></i> 赞助支持</div>
           <p class="sponsor-text">备用下载站由 <strong>BJY678</strong> 同学赞助支持</p>
           <p class="sponsor-desc">该站点存储策略为 OneDrive，由 BJY678 同学手动维护</p>
         </div>
@@ -47,9 +53,7 @@
 
       <div v-else-if="modalType === 'cloud'" class="cloud-content">
         <div class="cloud-section">
-          <div class="cloud-section-title">
-            <i class="fas fa-layer-group"></i> Edgeless Hub
-          </div>
+          <div class="cloud-section-title"><i class="fas fa-layer-group"></i> Edgeless Hub</div>
           <p class="cloud-desc">该链接将跳转至 Edgeless 下载站</p>
           <a href="https://down.edgeless.top" target="_blank" class="cloud-btn">
             <i class="fas fa-arrow-circle-down"></i> 前往下载站
@@ -57,9 +61,7 @@
         </div>
 
         <div class="cloud-section">
-          <div class="cloud-section-title">
-            <i class="fas fa-box"></i> 插件包
-          </div>
+          <div class="cloud-section-title"><i class="fas fa-box"></i> 插件包</div>
           <div class="cloud-links">
             <a href="https://caiyun.139.com/w/i/2prAHX6Beh96f" target="_blank" class="cloud-btn">
               <i class="fas fa-cloud"></i> 移动云盘 <span class="code">提取码 yc4d</span>
@@ -68,29 +70,33 @@
         </div>
 
         <div class="cloud-section">
-          <div class="cloud-section-title">
-            <i class="fas fa-palette"></i> 主题资源包
-          </div>
+          <div class="cloud-section-title"><i class="fas fa-palette"></i> 主题资源包</div>
           <div class="cloud-links">
             <a href="https://caiyun.139.com/w/i/2prAJE9KuGzkl" target="_blank" class="cloud-btn">
               <i class="fas fa-cloud"></i> 移动云盘 <span class="code">提取码 7yj7</span>
             </a>
-            <a href="https://cloud.189.cn/t/rqaAFraIjM3u" target="_blank" class="cloud-btn cloud-btn-archived">
+            <a
+              href="https://cloud.189.cn/t/rqaAFraIjM3u"
+              target="_blank"
+              class="cloud-btn cloud-btn-archived"
+            >
               <i class="fas fa-cloud"></i> 天翼云盘 <span class="archived-badge">已归档</span>
             </a>
           </div>
         </div>
 
         <div class="cloud-section">
-          <div class="cloud-section-title">
-            <i class="fas fa-folder-open"></i> 其他
-          </div>
+          <div class="cloud-section-title"><i class="fas fa-folder-open"></i> 其他</div>
           <p class="cloud-desc">该链接指向 Socket 文件夹，你可以下载到 ISO 镜像和 Edgeless ME 等</p>
           <div class="cloud-links">
             <a href="https://caiyun.139.com/w/i/2prAJp8CbKUn3" target="_blank" class="cloud-btn">
               <i class="fas fa-cloud"></i> 移动云盘 <span class="code">提取码 pyn6</span>
             </a>
-            <a href="https://cloud.189.cn/t/iiEbymnEfQFb" target="_blank" class="cloud-btn cloud-btn-archived">
+            <a
+              href="https://cloud.189.cn/t/iiEbymnEfQFb"
+              target="_blank"
+              class="cloud-btn cloud-btn-archived"
+            >
               <i class="fas fa-cloud"></i> 天翼云盘 <span class="archived-badge">已归档</span>
             </a>
           </div>
@@ -114,7 +120,11 @@ type ModalType = "backup" | "cloud" | null;
 const modalType = ref<ModalType>(null);
 
 const modalTitle = computed(() => {
-  return modalType.value === "backup" ? "备用下载站" : modalType.value === "cloud" ? "网盘分享" : "";
+  return modalType.value === "backup"
+    ? "备用下载站"
+    : modalType.value === "cloud"
+      ? "网盘分享"
+      : "";
 });
 
 const isModalVisible = computed(() => {

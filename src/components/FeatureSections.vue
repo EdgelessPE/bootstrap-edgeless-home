@@ -9,14 +9,18 @@
             <div class="section-divider"></div>
             <div class="row align-items-center">
               <div class="col-md-6 mb-4">
-                <h4 class="mb-4 h4 section-subtitle">{{ introSection.title }}</h4>
+                <h4 class="mb-4 h4 section-subtitle h-auto">{{ introSection.title }}</h4>
                 <p v-for="(text, i) in introSection.texts" :key="i" class="mb-3 section-text">
                   {{ text }}
                 </p>
               </div>
               <div class="col-md-6 mb-4">
                 <div class="image-wrapper">
-                  <img :src="introSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
+                  <img
+                    :src="introSection.image"
+                    class="img-fluid shadow-z-depth-2 rounded"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -105,7 +109,11 @@
         <div class="section-divider"></div>
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <div v-for="(feature, index) in performanceFeatures" :key="index" class="feature-card mb-4">
+            <div
+              v-for="(feature, index) in performanceFeatures"
+              :key="index"
+              class="feature-card mb-4"
+            >
               <div class="feature-icon-wrapper">
                 <i :class="[feature.icon, 'fa-lg']" :style="{ color: feature.color }"></i>
               </div>

@@ -1,23 +1,17 @@
 <template>
-  <Teleport to="body">
-    <div
-      class="modal-overlay"
-      :class="{ 'is-visible': visible && !isClosing }"
-      @click="handleClose"
-    >
-      <div class="modal-container" @click.stop>
-        <div class="modal-header">
-          <h3 class="modal-title">{{ title }}</h3>
-          <button class="modal-close" @click="handleClose" aria-label="关闭">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="modal-body">
-          <slot />
-        </div>
+  <div class="modal-overlay" :class="{ 'is-visible': visible && !isClosing }" @click="handleClose">
+    <div class="modal-container" @click.stop>
+      <div class="modal-header">
+        <h3 class="modal-title">{{ title }}</h3>
+        <button class="modal-close" @click="handleClose" aria-label="关闭">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <slot />
       </div>
     </div>
-  </Teleport>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -45,14 +39,17 @@ const handleClose = () => {
   }, 250);
 };
 
-watch(() => props.visible, (newVal) => {
-  if (newVal) {
-    isClosing.value = false;
-  }
-});
+watch(
+  () => props.visible,
+  (newVal) => {
+    if (newVal) {
+      isClosing.value = false;
+    }
+  },
+);
 </script>
 
-<style scoped>
+<style>
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -65,7 +62,9 @@ watch(() => props.visible, (newVal) => {
   padding: 1rem;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
 }
 
 .modal-overlay.is-visible {
@@ -85,7 +84,9 @@ watch(() => props.visible, (newVal) => {
   overflow: hidden;
   transform: scale(0.95) translateY(10px);
   opacity: 0;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .modal-overlay.is-visible .modal-container {
