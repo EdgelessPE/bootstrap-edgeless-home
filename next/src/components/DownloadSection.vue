@@ -48,7 +48,7 @@
       <div v-else-if="modalType === 'cloud'" class="cloud-content">
         <div class="cloud-section">
           <div class="cloud-section-title">
-            <i class="fas fa-folder"></i> Edgeless Hub
+            <i class="fas fa-layer-group"></i> Edgeless Hub
           </div>
           <p class="cloud-desc">该链接将跳转至 Edgeless 下载站</p>
           <a href="https://down.edgeless.top" target="_blank" class="cloud-btn">
