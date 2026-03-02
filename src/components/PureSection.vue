@@ -100,38 +100,38 @@ const openSourceSection = {
 .section-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #1e293b;
+  color: var(--bg-dark-start);
   margin-bottom: 0.5rem;
 }
 
 .section-divider {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-lighter));
   border-radius: 2px;
   margin: 0 auto 2.5rem;
 }
 
 .content-card {
-  background: white;
+  background: var(--white);
   border-radius: 1rem;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px var(--black-06);
   transition: all 0.3s ease;
 }
 
 .content-card:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px var(--black-1);
   transform: translateY(-4px);
 }
 
 .card-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1e293b;
+  color: var(--bg-dark-start);
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 2px solid var(--border-color);
 }
 
 .feature-row {
@@ -142,7 +142,7 @@ const openSourceSection = {
 
 .feature-icon {
   flex-shrink: 0;
-  color: #2563eb;
+  color: var(--primary-color);
   margin-top: 0.25rem;
 }
 
@@ -152,12 +152,12 @@ const openSourceSection = {
 
 .feature-title {
   font-weight: 600;
-  color: #1e293b;
+  color: var(--bg-dark-start);
   margin-bottom: 0.25rem;
 }
 
 .grey-text {
-  color: #64748b;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   line-height: 1.5;
   margin: 0;
@@ -166,9 +166,9 @@ const openSourceSection = {
 .center-image-wrapper {
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 50px var(--black-15);
   padding: 1rem;
-  background: white;
+  background: var(--white);
 }
 
 .center-image-wrapper img {
@@ -176,7 +176,7 @@ const openSourceSection = {
 }
 
 .indigo-text {
-  color: #2563eb !important;
+  color: var(--primary-color) !important;
 }
 
 @media (max-width: 991px) {

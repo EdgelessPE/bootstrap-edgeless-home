@@ -165,25 +165,25 @@ onMounted(() => {
   justify-content: center;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(0, 0, 0, 0.4) 50%,
-    rgba(0, 0, 0, 0.5) 100%
+    var(--black-2) 0%,
+    var(--black-4) 50%,
+    var(--black-5) 100%
   );
 }
 
 .rgba-black-light {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--black-3);
 }
 
 .white-text {
-  color: #fff !important;
+  color: var(--white) !important;
 }
 
 .white-text h1 {
   font-size: 3.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 4px 20px var(--black-3);
   margin-bottom: 1.5rem;
 }
 
@@ -191,7 +191,7 @@ onMounted(() => {
   font-size: 1.35rem;
   font-weight: 400;
   opacity: 0.95;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 10px var(--black-2);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -217,19 +217,19 @@ onMounted(() => {
   border-radius: 50%;
   opacity: 0.6;
   transition: all 0.3s ease;
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid var(--white-8);
   background: transparent;
 }
 
 #carousel-example-1z .carousel-indicators li.active {
   opacity: 1;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--white-9);
   transform: scale(1.2);
 }
 
 .btn-outline-white {
-  border: 2px solid white;
-  color: white;
+  border: 2px solid var(--white);
+  color: var(--white);
   padding: 0.875rem 2.25rem;
   border-radius: 0.5rem;
   font-weight: 500;
@@ -241,10 +241,10 @@ onMounted(() => {
 }
 
 .btn-outline-white:hover {
-  background-color: white;
-  color: #1e293b;
+  background-color: var(--white);
+  color: var(--bg-dark-start);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 25px var(--black-25);
 }
 
 .wow.fadeIn {
@@ -261,7 +261,7 @@ onMounted(() => {
   justify-content: center !important;
   z-index: 20 !important;
   opacity: 1 !important;
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: var(--white-1) !important;
   backdrop-filter: blur(8px);
   border-radius: 50%;
   transition: all 0.3s ease !important;
@@ -289,13 +289,13 @@ onMounted(() => {
 
 .carousel-control-prev:hover .carousel-control-prev-icon::before,
 .carousel-control-next:hover .carousel-control-next-icon::before {
-  color: #fff !important;
+  color: var(--custom-fff) !important;
 }
 
 .carousel-control-prev-icon::before {
   font-family: "FontAwesome" !important;
   content: "\f104" !important;
-  color: #fff !important;
+  color: var(--custom-fff) !important;
   font-size: 1.75rem !important;
   transition: color 0.3s ease;
 }
@@ -303,7 +303,7 @@ onMounted(() => {
 .carousel-control-next-icon::before {
   font-family: "FontAwesome" !important;
   content: "\f105" !important;
-  color: #fff !important;
+  color: var(--custom-fff) !important;
   font-size: 1.75rem !important;
   transition: color 0.3s ease;
 }
@@ -311,7 +311,7 @@ onMounted(() => {
 #version {
   font-size: 0.875rem;
   opacity: 0.9;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--white-1);
   backdrop-filter: blur(4px);
   padding: 0.5rem 1.25rem;
   border-radius: 2rem;

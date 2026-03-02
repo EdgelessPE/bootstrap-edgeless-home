@@ -175,14 +175,14 @@ const pluginFeatures = [
   },
   {
     icon: "fa fa-rocket",
-    color: "#F44336",
+    color: "var(--color-red)",
     title: "易于管理",
     description:
       "在启动盘指定目录放置.7z插件包即可应用插件\n使用命令行包管理程序ept或聚合客户端完全管理您的插件",
   },
   {
     icon: "fa fa-book",
-    color: "#4caf50",
+    color: "var(--color-green)",
     title: "提供开发者文档",
     description:
       "插件包原理简单易懂，快速完成开发\n使用专为调试插件包设计的开发工具并在交流群寻求帮助",
@@ -198,13 +198,13 @@ const themeFeatures = [
   },
   {
     icon: "fa fa-puzzle-piece",
-    color: "#3F51B5",
+    color: "var(--color-indigo)",
     title: "控制面板",
     description: "使用主题包作者提供的控制面板实现更全面的主题沉浸体验",
   },
   {
     icon: "fa fa-graduation-cap",
-    color: "#9c27b0",
+    color: "var(--color-purple)",
     title: "轻松上手，助力开发",
     description: "专注于内容差异的艺术创作，无需操心底层实现\n允许使用已有资源包搭配生成主题包",
   },
@@ -219,14 +219,14 @@ const performanceFeatures = [
   },
   {
     icon: "fa fa-window-restore",
-    color: "#009688",
+    color: "var(--color-teal)",
     title: "寄生启动",
     description:
       '业界首次提出"寄生启动"概念，依托于现有启动盘启动Edgeless而无需重新制作启动盘，同时享有更优秀的启动菜单和旧版内核',
   },
   {
     icon: "fa fa-bolt",
-    color: "#ffeb3b",
+    color: "var(--color-yellow)",
     title: "轻量级架构",
     description: "镜像启动逻辑与微软官方镜像类似，便于实现更多自定义玩法",
   },
@@ -237,26 +237,26 @@ const performanceFeatures = [
 .section-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #1e293b;
+  color: var(--bg-dark-start);
   margin-bottom: 1rem;
 }
 
 .section-subtitle {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1e293b;
+  color: var(--bg-dark-start);
 }
 
 .section-text {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #64748b;
+  color: var(--text-secondary);
 }
 
 .section-divider {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-lighter));
   border-radius: 2px;
   margin: 0 auto 2rem;
 }
@@ -264,12 +264,12 @@ const performanceFeatures = [
 .section-divider-hr {
   border: none;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+  background: linear-gradient(90deg, transparent, var(--border-color), transparent);
   margin: 3rem 0;
 }
 
 .section-alt {
-  background: #f8fafc;
+  background: var(--bg-light);
   border-radius: 1rem;
   padding: 3rem 2rem;
   margin: 2rem 0;
@@ -282,7 +282,7 @@ const performanceFeatures = [
 .image-wrapper {
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px var(--black-1);
   transition: transform 0.3s ease;
 }
 
@@ -300,14 +300,14 @@ const performanceFeatures = [
   align-items: flex-start;
   gap: 1.25rem;
   padding: 1.25rem;
-  background: white;
+  background: var(--white);
   border-radius: 0.75rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px var(--black-05);
   transition: all 0.3s ease;
 }
 
 .feature-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px var(--black-1);
   transform: translateX(4px);
 }
 
@@ -318,7 +318,7 @@ const performanceFeatures = [
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f8fafc;
+  background: var(--bg-light);
   border-radius: 0.75rem;
 }
 
@@ -328,13 +328,13 @@ const performanceFeatures = [
 
 .feature-title {
   font-weight: 600;
-  color: #1e293b;
+  color: var(--bg-dark-start);
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
 }
 
 .grey-text {
-  color: #64748b;
+  color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0;
@@ -349,13 +349,13 @@ const performanceFeatures = [
 .feature-item {
   display: flex;
   align-items: center;
-  color: #475569;
+  color: var(--text-body);
   font-size: 1rem;
   margin: 0;
 }
 
 .text-primary {
-  color: #2563eb !important;
+  color: var(--primary-color) !important;
 }
 
 @media (max-width: 768px) {
