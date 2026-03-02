@@ -47,7 +47,7 @@
           <a
             href="https://edgeless.work/"
             target="_blank"
-            class="backup-link !bg-[#1d4ed8] !hover:bg-[#2563eb] !text-white"
+            class="backup-link !bg-[linear-gradient(135deg,#2563eb,#3b82f6)] !hover:bg-[linear-gradient(135deg,#1d4ed8,#2563eb)] !text-white"
           >
             <i class="fas fa-external-link-alt"></i>
             <span>点稽前往</span>
