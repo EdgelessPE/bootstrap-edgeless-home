@@ -1,42 +1,28 @@
 <template>
   <div id="carousel-example-1z" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <ol class="carousel-indicators">
-      <li
-        v-for="(slide, index) in slides"
-        :key="index"
-        data-bs-target="#carousel-example-1z"
-        :data-bs-slide-to="index"
-        :class="{ active: index === 0 }"
-      ></li>
+      <li v-for="(slide, index) in slides" :key="index" data-bs-target="#carousel-example-1z" :data-bs-slide-to="index"
+        :class="{ active: index === 0 }"></li>
     </ol>
     <div class="carousel-inner" role="listbox">
-      <div
-        v-for="(slide, index) in slides"
-        :key="index"
-        class="carousel-item"
-        :class="{ active: index === 0 }"
-      >
+      <div v-for="(slide, index) in slides" :key="index" class="carousel-item" :class="{ active: index === 0 }">
         <div class="view"
           :style="`background-image: url('${slide.bgImage}'); background-repeat: no-repeat; background-size: cover;`">
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
             <div class="text-center white-text mx-5 wow-fadeIn">
-              <h1 class="mb-4" :class="{ 'font-earth': slide.isTitleLarge }">
+              <h1 class="mb-4 text-white" :class="{ 'font-earth': slide.isTitleLarge }">
                 <strong v-html="slide.title"></strong>
               </h1>
-              <p :class="{ 'mb-4 d-none d-md-block': slide.showSubtitle }">
+              <p :class="{ 'mb-4 text-white d-none d-md-block': slide.showSubtitle }">
                 <strong v-if="slide.showSubtitle">{{ slide.subtitle }}</strong>
-                <div v-else class="font-size-sm" v-html="slide.description"></div>
+              <div v-else class="font-size-sm text-white" v-html="slide.description"></div>
               </p>
               <div v-if="slide.showVersion" id="version" class="flex gap-4 font-size-sm">
                 <div>Beta公测版本：{{ beta }}</div>
                 <div v-if="alpha !== '0.0.0'">Alpha内测版本：{{ alpha }}</div>
               </div>
-              <a
-                v-if="slide.button"
-                :href="slide.buttonUrl"
-                class="btn btn-outline-white btn-lg mt-4"
-                :target="slide.buttonTarget"
-              >{{ slide.button }}</a>
+              <a v-if="slide.button" :href="slide.buttonUrl" class="btn btn-outline-white btn-lg mt-4"
+                :target="slide.buttonTarget">{{ slide.button }}</a>
             </div>
           </div>
         </div>
@@ -160,6 +146,10 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.5) 100%);
 }
 
 .rgba-black-light {
@@ -171,11 +161,20 @@ onMounted(() => {
 }
 
 .white-text h1 {
-  font-size: 40px;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.5rem;
 }
 
 .white-text p {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
+  font-weight: 400;
+  opacity: 0.95;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 #carousel-example-1z .carousel,
@@ -190,18 +189,43 @@ onMounted(() => {
 
 #carousel-example-1z .carousel-indicators {
   z-index: 15;
+  margin-bottom: 2rem;
+}
+
+#carousel-example-1z .carousel-indicators li {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: transparent;
+}
+
+#carousel-example-1z .carousel-indicators li.active {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.2);
 }
 
 .btn-outline-white {
   border: 2px solid white;
   color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.25rem;
+  padding: 0.875rem 2.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(4px);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .btn-outline-white:hover {
   background-color: white;
-  color: #333;
+  color: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
 .wow.fadeIn {
@@ -211,19 +235,23 @@ onMounted(() => {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-image: none !important;
-  width: 50px !important;
-  height: 50px !important;
+  width: 56px !important;
+  height: 56px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   z-index: 20 !important;
   opacity: 1 !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  transition: all 0.3s ease !important;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
   z-index: 20 !important;
-  width: 15% !important;
+  width: 10% !important;
   opacity: 1 !important;
 }
 
@@ -235,6 +263,11 @@ onMounted(() => {
   right: 0 !important;
 }
 
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
 .carousel-control-prev:hover .carousel-control-prev-icon::before,
 .carousel-control-next:hover .carousel-control-next-icon::before {
   color: #fff !important;
@@ -243,16 +276,42 @@ onMounted(() => {
 .carousel-control-prev-icon::before {
   font-family: 'FontAwesome' !important;
   content: '\f104' !important;
-  color: #ddd !important;
-  font-size: 2rem !important;
+  color: #fff !important;
+  font-size: 1.75rem !important;
   transition: color 0.3s ease;
 }
 
 .carousel-control-next-icon::before {
   font-family: 'FontAwesome' !important;
   content: '\f105' !important;
-  color: #ddd !important;
-  font-size: 2rem !important;
+  color: #fff !important;
+  font-size: 1.75rem !important;
   transition: color 0.3s ease;
+}
+
+#version {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  display: inline-flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .white-text h1 {
+    font-size: 2rem;
+  }
+
+  .white-text p {
+    font-size: 1rem;
+  }
+
+  .btn-outline-white {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
 }
 </style>

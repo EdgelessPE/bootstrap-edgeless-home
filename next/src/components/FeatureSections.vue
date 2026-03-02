@@ -5,14 +5,17 @@
       <section class="w3l-index-block3">
         <div class="py-md-5">
           <div class="container py-md-3">
-            <h2 class="h2 text-center mb-5 h-auto">谁说PE只能满足维护？</h2>
-            <div class="row">
+            <h2 class="h2 text-center mb-5 section-title">谁说PE只能满足维护？</h2>
+            <div class="section-divider"></div>
+            <div class="row align-items-center">
               <div class="col-md-6 mb-4">
-                <h4 class="mb-4 h4 h-auto">{{ introSection.title }}</h4>
-                <p v-for="(text, i) in introSection.texts" :key="i" class="mb-3">{{ text }}</p>
+                <h4 class="mb-4 h4 section-subtitle">{{ introSection.title }}</h4>
+                <p v-for="(text, i) in introSection.texts" :key="i" class="mb-3 section-text">{{ text }}</p>
               </div>
               <div class="col-md-6 mb-4">
-                <img :src="introSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
+                <div class="image-wrapper">
+                  <img :src="introSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
+                </div>
               </div>
             </div>
           </div>
@@ -20,58 +23,70 @@
       </section>
 
       <!-- Section 2 -->
-      <section class="mt-5 wow-fadeIn">
-        <div class="row">
+      <section class="section-alt mt-5 wow-fadeIn">
+        <div class="row align-items-center">
           <div class="col-md-6 mb-4">
-            <img :src="coreSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
+            <div class="image-wrapper">
+              <img :src="coreSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
+            </div>
           </div>
           <div class="col-md-6 mb-4">
-            <h3 class="h3 mb-4 h-auto">{{ coreSection.title }}</h3>
-            <p v-for="(text, i) in coreSection.texts" :key="i" class="mb-3">{{ text }}</p>
+            <h3 class="h3 mb-4 section-subtitle">{{ coreSection.title }}</h3>
+            <div class="feature-list">
+              <p v-for="(text, i) in coreSection.texts" :key="i" class="mb-3 feature-item">
+                <i class="fas fa-check-circle text-primary me-2"></i>{{ text }}
+              </p>
+            </div>
             <div id="plugin"></div>
           </div>
         </div>
       </section>
 
-      <hr class="my-5" />
+      <hr class="my-5 section-divider-hr" />
 
       <!-- Section 3: 强大的插件包 -->
-      <section>
-        <h3 class="h3 text-center mb-5">{{ pluginSection.title }}</h3>
-        <div class="row wow-fadeIn">
+      <section class="section-block">
+        <h3 class="h3 text-center mb-5 section-title">{{ pluginSection.title }}</h3>
+        <div class="section-divider"></div>
+        <div class="row wow-fadeIn align-items-center">
           <div class="col-lg-6 col-md-12 px-4">
-            <div v-for="(feature, index) in pluginFeatures" :key="index" class="row mb-6">
-              <div class="col-1 me-3">
-                <i :class="[feature.icon, 'fa-2x']" :style="{ color: feature.color }"></i>
+            <div v-for="(feature, index) in pluginFeatures" :key="index" class="feature-card mb-4">
+              <div class="feature-icon-wrapper">
+                <i :class="[feature.icon, 'fa-lg']" :style="{ color: feature.color }"></i>
               </div>
-              <div class="col-10">
+              <div class="feature-content">
                 <h5 class="feature-title">{{ feature.title }}</h5>
                 <p class="grey-text" v-html="feature.description.replace('\n', '<br />')"></p>
               </div>
             </div>
           </div>
           <div class="col-md-6 mb-4">
-            <img :src="pluginSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
+            <div class="image-wrapper">
+              <img :src="pluginSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
+            </div>
           </div>
         </div>
         <div id="theme"></div>
       </section>
 
-      <hr class="my-5" />
+      <hr class="my-5 section-divider-hr" />
 
       <!-- Section 4: 优雅的主题包 -->
-      <section>
-        <h3 class="h3 text-center mb-5">{{ themeSection.title }}</h3>
-        <div class="row wow-fadeIn">
+      <section class="section-block">
+        <h3 class="h3 text-center mb-5 section-title">{{ themeSection.title }}</h3>
+        <div class="section-divider"></div>
+        <div class="row wow-fadeIn align-items-center">
           <div class="col-md-6 mb-4">
-            <img :src="themeSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
+            <div class="image-wrapper">
+              <img :src="themeSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
+            </div>
           </div>
           <div class="col-lg-6 col-md-12 px-4">
-            <div v-for="(feature, index) in themeFeatures" :key="index" class="row mb-6">
-              <div class="col-1 me-3">
-                <i :class="[feature.icon, 'fa-2x']" :style="{ color: feature.color }"></i>
+            <div v-for="(feature, index) in themeFeatures" :key="index" class="feature-card mb-4">
+              <div class="feature-icon-wrapper">
+                <i :class="[feature.icon, 'fa-lg']" :style="{ color: feature.color }"></i>
               </div>
-              <div class="col-10">
+              <div class="feature-content">
                 <h5 class="feature-title">{{ feature.title }}</h5>
                 <p class="grey-text" v-html="feature.description.replace('\n', '<br />')"></p>
               </div>
@@ -80,18 +95,19 @@
         </div>
       </section>
 
-      <hr class="my-5" />
+      <hr class="my-5 section-divider-hr" />
 
       <!-- Section 5: 酣畅淋漓 分秒必争 -->
-      <section>
-        <h3 class="h3 text-center mb-5">{{ performanceSection.title }}</h3>
-        <div>
-          <div>
-            <div v-for="(feature, index) in performanceFeatures" :key="index" class="row mb-6">
-              <div class="col-1 me-3">
-                <i :class="[feature.icon, 'fa-2x']" :style="{ color: feature.color }"></i>
+      <section class="section-block">
+        <h3 class="h3 text-center mb-5 section-title">{{ performanceSection.title }}</h3>
+        <div class="section-divider"></div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div v-for="(feature, index) in performanceFeatures" :key="index" class="feature-card mb-4">
+              <div class="feature-icon-wrapper">
+                <i :class="[feature.icon, 'fa-lg']" :style="{ color: feature.color }"></i>
               </div>
-              <div class="col-10">
+              <div class="feature-content">
                 <h5 class="feature-title">{{ feature.title }}</h5>
                 <p class="grey-text" v-html="feature.description.replace('\n', '<br />')"></p>
               </div>
@@ -118,9 +134,9 @@ const introSection = {
 const coreSection = {
   title: '基于 Win10 的PE核心',
   texts: [
-    '• 使用19043作为母盘，强力驱动主流配置机型',
-    '• 支持Legacy+UEFI双引导，支持识别主流NVME协议SSD',
-    '• 提供有线+无线网络连接能力，同时具备较为完整的库文件支持'
+    '使用19043作为母盘，强力驱动主流配置机型',
+    '支持Legacy+UEFI双引导，支持识别主流NVME协议SSD',
+    '提供有线+无线网络连接能力，同时具备较为完整的库文件支持'
   ],
   image: '/img/picbed/f2.jpg'
 }
@@ -202,3 +218,147 @@ const performanceFeatures = [
   },
 ]
 </script>
+
+<style scoped>
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.section-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #64748b;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  border-radius: 2px;
+  margin: 0 auto 2rem;
+}
+
+.section-divider-hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+  margin: 3rem 0;
+}
+
+.section-alt {
+  background: #f8fafc;
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  margin: 2rem 0;
+}
+
+.section-block {
+  padding: 2rem 0;
+}
+
+.image-wrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover {
+  transform: translateY(-4px);
+}
+
+.image-wrapper img {
+  width: 100%;
+  display: block;
+}
+
+.feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateX(4px);
+}
+
+.feature-icon-wrapper {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  border-radius: 0.75rem;
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-title {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.grey-text {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  color: #475569;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.text-primary {
+  color: #2563eb !important;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .section-alt {
+    padding: 2rem 1rem;
+  }
+
+  .feature-card {
+    padding: 1rem;
+  }
+}
+</style>

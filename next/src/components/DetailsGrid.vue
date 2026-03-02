@@ -1,20 +1,21 @@
 <template>
-  <section>
-    <h3 class="my-5 h3 text-center h-auto">打动你的更多细节</h3>
+  <section class="details-section">
+    <h3 class="my-5 h3 text-center section-title">打动你的更多细节</h3>
+    <div class="section-divider"></div>
     <div
       v-for="(row, rowIndex) in features"
       :key="rowIndex"
       class="row features-small mt-5 wow-fadeIn"
       :class="{ 'mt-4': rowIndex > 0 }"
     >
-      <div v-for="(feature, index) in row" :key="index" class="col-xl-3 col-lg-6">
-        <div class="row">
-          <div class="col-2">
-            <i :class="[feature.icon, 'fa-2x', 'mb-1', 'indigo-text']" aria-hidden="true"></i>
+      <div v-for="(feature, index) in row" :key="index" class="col-xl-3 col-lg-6 col-md-6">
+        <div class="detail-card">
+          <div class="detail-icon">
+            <i :class="[feature.icon]" aria-hidden="true"></i>
           </div>
-          <div class="col-10 mb-2" :class="{ 'ps-3': index === 0 }">
-            <h5 class="feature-title font-bold mb-1">{{ feature.title }}</h5>
-            <p class="grey-text mt-2" v-html="feature.description"></p>
+          <div class="detail-content">
+            <h5 class="feature-title">{{ feature.title }}</h5>
+            <p class="grey-text" v-html="feature.description"></p>
           </div>
         </div>
       </div>
@@ -50,3 +51,86 @@ const features = [
   ],
 ]
 </script>
+
+<style scoped>
+.details-section {
+  padding: 2rem 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  border-radius: 2px;
+  margin: 0 auto 2.5rem;
+}
+
+.detail-card {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+  border: 1px solid #f1f5f9;
+}
+
+.detail-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+  border-color: #e2e8f0;
+}
+
+.detail-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.detail-icon i {
+  font-size: 1.25rem;
+  color: white;
+}
+
+.detail-content {
+  flex: 1;
+}
+
+.feature-title {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.grey-text {
+  color: #64748b;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.indigo-text {
+  color: #2563eb !important;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+</style>
