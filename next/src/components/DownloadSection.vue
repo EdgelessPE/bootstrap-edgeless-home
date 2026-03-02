@@ -75,8 +75,8 @@
             <a href="https://caiyun.139.com/w/i/2prAJE9KuGzkl" target="_blank" class="cloud-btn">
               <i class="fas fa-cloud"></i> 移动云盘 <span class="code">提取码 7yj7</span>
             </a>
-            <a href="https://cloud.189.cn/t/rqaAFraIjM3u" target="_blank" class="cloud-btn">
-              <i class="fas fa-cloud"></i> 天翼云盘
+            <a href="https://cloud.189.cn/t/rqaAFraIjM3u" target="_blank" class="cloud-btn cloud-btn-archived">
+              <i class="fas fa-cloud"></i> 天翼云盘 <span class="archived-badge">已归档</span>
             </a>
           </div>
         </div>
@@ -90,8 +90,8 @@
             <a href="https://caiyun.139.com/w/i/2prAJp8CbKUn3" target="_blank" class="cloud-btn">
               <i class="fas fa-cloud"></i> 移动云盘 <span class="code">提取码 pyn6</span>
             </a>
-            <a href="https://cloud.189.cn/t/iiEbymnEfQFb" target="_blank" class="cloud-btn">
-              <i class="fas fa-cloud"></i> 天翼云盘
+            <a href="https://cloud.189.cn/t/iiEbymnEfQFb" target="_blank" class="cloud-btn cloud-btn-archived">
+              <i class="fas fa-cloud"></i> 天翼云盘 <span class="archived-badge">已归档</span>
             </a>
           </div>
         </div>
@@ -347,6 +347,28 @@ const closeModal = () => {
 
 .cloud-btn:hover .code {
   background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.cloud-btn-archived {
+  position: relative;
+}
+
+.archived-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  background: linear-gradient(135deg, #fecaca, #fca5a5);
+  color: #b91c1c;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
+.cloud-btn-archived:hover .archived-badge {
+  background: linear-gradient(135deg, #f87171, #ef4444);
   color: white;
 }
 </style>
