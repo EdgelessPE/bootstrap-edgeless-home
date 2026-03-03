@@ -332,5 +332,21 @@ onMounted(() => {
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
   }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .carousel-control-prev-icon::before,
+  .carousel-control-next-icon::before {
+    font-size: 1.25rem !important;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 15% !important;
+  }
 }
 </style>
