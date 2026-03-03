@@ -35,7 +35,7 @@
 
         <div class="text-center mt-4">
           <h3 class="h4 mb-4 donate-subtitle h-auto">扫码付费过于直白？我们提供了额外的捐赠方式</h3>
-          <button class="btn btn-donate" @click="showModal = true">让我康康</button>
+          <button class="btn btn-primary" @click="showModal = true">让我康康</button>
         </div>
       </div>
     </div>
@@ -110,29 +110,6 @@ const showModal = ref(false);
 .donate-subtitle {
   color: var(--text-body);
   font-weight: 500;
-}
-
-.btn-donate {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-  color: var(--white);
-  border: none;
-  padding: 0.875rem 2.5rem;
-  border-radius: 2rem;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px var(--primary-3);
-}
-
-.btn-donate:hover {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px var(--primary-4);
-}
-
-.btn-primary {
-  background: var(--brand-blue);
-  border-color: var(--brand-blue);
 }
 
 @media (max-width: 768px) {

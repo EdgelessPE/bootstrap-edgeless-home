@@ -66,7 +66,7 @@ export default defineConfig({
   },
   shortcuts: {
     'btn-outline-white': 'border-2 border-white text-white rounded px-6 py-2 hover:bg-white hover:text-gray-800 transition-colors duration-300',
-    'btn-primary': 'bg-[#2F5696] border-[#2F5696] text-white rounded px-6 py-2',
+    'btn-primary': 'bg-[#2F5696] border-[#2F5696] text-white rounded px-6 py-2 hover:bg-[#1e3d6b] hover:border-[#1e3d6b] transition-colors duration-300',
     'btn-primary-outline': 'border-2 border-white text-white px-6 py-2 hover:bg-white hover:text-gray-800',
     'rgba-black-light': 'bg-black/60',
     'rgba-black-strong': 'bg-black/70',
