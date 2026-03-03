@@ -284,7 +284,7 @@ onMounted(() => {
 
 .carousel-control-prev:hover .carousel-control-prev-icon,
 .carousel-control-next:hover .carousel-control-next-icon {
-  background: rgba(255, 255, 255, 0.25) !important;
+  background: var(--white-25) !important;
 }
 
 .carousel-control-prev:hover .carousel-control-prev-icon::before,
