@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { useTheme, type ThemeMode } from "../composables/useTheme";
+import { useTheme } from "../composables/useTheme";
 
 const { theme, cycleTheme } = useTheme();
 
@@ -16,8 +16,6 @@ const themeIcon = computed(() => {
       return "fas fa-sun";
     case "dark":
       return "fas fa-moon";
-    case "system":
-      return "fas fa-desktop";
   }
 });
 
@@ -27,8 +25,6 @@ const themeTitle = computed(() => {
       return "浅色模式";
     case "dark":
       return "深色模式";
-    case "system":
-      return "跟随系统";
   }
 });
 </script>

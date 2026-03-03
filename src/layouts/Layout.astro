@@ -23,11 +23,8 @@ const { title } = Astro.props;
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" />
     <script is:inline>
       (function() {
-        const theme = localStorage.getItem("theme-mode") || "system";
-        let actualTheme = theme;
-        if (theme === "system") {
-          actualTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        }
+        const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const actualTheme = isDark ? "dark" : "light";
         document.documentElement.setAttribute("data-theme", actualTheme);
         document.documentElement.setAttribute("data-bs-theme", actualTheme);
       })();

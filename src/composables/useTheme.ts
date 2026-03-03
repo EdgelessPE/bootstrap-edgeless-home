@@ -1,10 +1,8 @@
 import { ref, watch, onMounted } from "vue";
 
-export type ThemeMode = "light" | "dark" | "system";
+export type ThemeMode = "light" | "dark";
 
-const THEME_KEY = "theme-mode";
-
-const theme = ref<ThemeMode>("system");
+const theme = ref<ThemeMode>("light");
 const actualTheme = ref<"light" | "dark">("light");
 
 const getSystemTheme = (): "light" | "dark" => {
@@ -23,41 +21,22 @@ const applyTheme = (newTheme: "light" | "dark") => {
 };
 
 const updateTheme = () => {
-  const mode = theme.value;
-  if (mode === "system") {
-    applyTheme(getSystemTheme());
-  } else {
-    applyTheme(mode);
-  }
+  applyTheme(theme.value);
 };
 
 export function useTheme() {
   onMounted(() => {
-    const savedTheme = localStorage.getItem(THEME_KEY) as ThemeMode | null;
-    if (savedTheme && ["light", "dark", "system"].includes(savedTheme)) {
-      theme.value = savedTheme;
-    }
-    updateTheme();
-
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    mediaQuery.addEventListener("change", () => {
-      if (theme.value === "system") {
-        updateTheme();
-      }
-    });
-  });
-
-  watch(theme, (newValue) => {
-    localStorage.setItem(THEME_KEY, newValue);
+    const systemTheme = getSystemTheme();
+    theme.value = systemTheme;
     updateTheme();
   });
 
-  const setTheme = (mode: ThemeMode) => {
-    theme.value = mode;
-  };
+  watch(theme, () => {
+    updateTheme();
+  });
 
   const cycleTheme = () => {
-    const modes: ThemeMode[] = ["system", "light", "dark"];
+    const modes: ThemeMode[] = ["light", "dark"];
     const currentIndex = modes.indexOf(theme.value);
     const nextIndex = (currentIndex + 1) % modes.length;
     theme.value = modes[nextIndex];
@@ -66,7 +45,6 @@ export function useTheme() {
   return {
     theme,
     actualTheme,
-    setTheme,
     cycleTheme,
   };
 }
