@@ -82,10 +82,14 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import ContentModal from "./ContentModal.vue";
 
 const showBetaModal = ref(false);
+
+onMounted(() => {
+  showBetaModal.value = new URLSearchParams(window.location.search).get("openBetaDrawer") === "1";
+});
 
 const friendlyLinks = {
   Portal: [
