@@ -132,7 +132,7 @@ const friendlyLinks = {
     { name: "Horatio", url: "https://horatio.cn/", title: "一个沙雕网友的个人博客" },
     {
       name: "Tokisaki-Galaxy",
-      url: "https://tokisaki.top",
+      url: "https://tski.uk/",
       title: "僕らの手には何もないけど,かわりに　つなぎあえるから",
     },
     { name: "Dmcimi", url: "https://blog.dmcimi.top/", title: "天下风云出我辈，一入江湖岁月催" },
