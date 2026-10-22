@@ -6,7 +6,7 @@
 
 图标保留 Font Awesome 类名，构建时从已安装的包提取实际使用的 SVG，生成 `src/styles/icons.css`，不加载图标字体。`pnpm dev`、`pnpm build` 会自动生成，也可以运行 `pnpm icons:generate`。新增动态图标时，请在源码中保留完整类名字符串。
 
-Nginx 缓存配置见 [deploy/nginx-cache.conf](deploy/nginx-cache.conf)：在 `http {}` 中 include 此文件，并在本站 `server {}` 中添加 `add_header Cache-Control $edgeless_cache_control;`。移除已有静态资源 location 中冲突的 `expires`、`Cache-Control` 配置；若 location 自行设置了 `add_header`，需要在该 location 同时设置缓存头并保留所需安全响应头。哈希资源缓存一年并标记 immutable，固定文件名的图片与字体缓存一天，HTML 每次校验。配置需由服务器部署流程应用，并先执行 `nginx -t`；仓库构建不会修改线上 Nginx。
+宝塔站点完整 Nginx 配置见 [deploy/nginx-cache.conf](deploy/nginx-cache.conf)，可用于替换 `home.edgeless.top` 的站点配置。文件保留原有证书、验证目录、访问限制、伪静态引用及日志配置；哈希资源缓存一年并标记 immutable，固定文件名的图片、字体与 JS/CSS 缓存一天，HTML 每次校验，各静态资源 location 同时保留 HSTS 响应头。部署时先执行 `nginx -t`，通过后平滑重载；仓库构建不会修改线上 Nginx。
 
 ```sh
 pnpm create astro@latest -- --template minimal
