@@ -65,7 +65,7 @@ const alpha = ref("loading...");
 
 const slides = [
   {
-    bgImage: "/img/picbed/r1.jpg",
+    bgImage: "/img/picbed/r1.webp",
     title: "edgElEss",
     subtitle: "强大而优雅的半开源PE工具",
     showSubtitle: true,
@@ -76,7 +76,7 @@ const slides = [
     description: "",
   },
   {
-    bgImage: "/img/picbed/r2.jpg",
+    bgImage: "/img/picbed/r2.webp",
     title: "强大的插件包功能",
     description: "自由组合插件包，快速打造最适合你的PE",
     showSubtitle: false,
@@ -87,7 +87,7 @@ const slides = [
     buttonTarget: "",
   },
   {
-    bgImage: "/img/picbed/r3.jpg",
+    bgImage: "/img/picbed/r3.webp",
     title: "优雅的主题包功能",
     description: "在界面上实现高度自定义，我的PE就是与众不同",
     showSubtitle: false,
@@ -98,7 +98,7 @@ const slides = [
     buttonTarget: "",
   },
   {
-    bgImage: "/img/picbed/r4.jpg",
+    bgImage: "/img/picbed/r4.webp",
     title: "也许是东半球第一个部分开源的PE项目",
     description: "恪守三无原则：无广告无收费无劫持，告别流氓PE的困扰",
     showSubtitle: false,

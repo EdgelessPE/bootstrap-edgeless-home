@@ -33,7 +33,7 @@
             </ul>
           </div>
           <div class="col-md-4">
-            <img src="/img/picbed/b.png" alt="" class="img-fluid" />
+            <img src="/img/picbed/b.webp" alt="" class="img-fluid" />
           </div>
         </div>
       </div>

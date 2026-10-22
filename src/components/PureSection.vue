@@ -57,7 +57,7 @@
 </template>
 
 <script setup>
-const centerImage = "/img/picbed/f5.png";
+const centerImage = "/img/picbed/f5.webp";
 
 const pureSection = {
   title: '恪守"三无"原则',

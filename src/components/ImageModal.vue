@@ -1,7 +1,7 @@
 <template>
   <ContentModal :visible="visible" :title="title" @close="handleClose">
     <div class="image-modal-body">
-      <img src="/img/alipay.jpg" alt="支付宝捐赠码" class="modal-image" />
+      <img src="/img/alipay.webp" alt="支付宝捐赠码" class="modal-image" />
       <p class="modal-hint">通过扫码领红包来捐赠，这样的捐赠方式不会被记录到捐赠列表</p>
     </div>
   </ContentModal>

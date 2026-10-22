@@ -2,7 +2,7 @@
   <section id="donate" class="w3l-index-block3 pt-3 pb-5 donate-section">
     <ImageModal
       :visible="showModal"
-      imageSrc="/img/alipay.jpg"
+      imageSrc="/img/alipay.webp"
       alt="支付宝捐赠码"
       @close="showModal = false"
     />
@@ -23,7 +23,7 @@
               target="_blank"
             >
               <div class="qrcode-wrapper">
-                <img src="/img/pay.png" alt="捐赠二维码" class="img-fluid" />
+                <img src="/img/pay.webp" alt="捐赠二维码" class="img-fluid" />
               </div>
               <h4 class="donate-qr-title">支持支付宝、微信</h4>
               <small class="d-block donate-hint"

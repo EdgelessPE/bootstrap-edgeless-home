@@ -138,7 +138,7 @@ const introSection = {
     "在保留原生Win10系统体验的同时提供强大、便捷、易用的自定义能力",
     "我们不断探索PE的极限，力图打造可玩性最佳的PE工具，为您呈现一份最适合您的PE",
   ],
-  image: "/img/picbed/f1.jpg",
+  image: "/img/picbed/f1.webp",
 };
 
 const coreSection = {
@@ -148,17 +148,17 @@ const coreSection = {
     "支持Legacy+UEFI双引导，支持识别主流NVME协议SSD",
     "提供有线+无线网络连接能力，同时具备较为完整的库文件支持",
   ],
-  image: "/img/picbed/f2.jpg",
+  image: "/img/picbed/f2.webp",
 };
 
 const pluginSection = {
   title: "强大的插件包",
-  image: "/img/picbed/f3.jpg",
+  image: "/img/picbed/f3.webp",
 };
 
 const themeSection = {
   title: "优雅的主题包",
-  image: "/img/picbed/f4.jpg",
+  image: "/img/picbed/f4.webp",
 };
 
 const performanceSection = {

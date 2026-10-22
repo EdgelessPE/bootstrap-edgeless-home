@@ -151,7 +151,7 @@ const closeModal = () => {
 <style scoped>
 .download-section {
   position: relative;
-  background-image: url(/img/picbed/d.jpg);
+  background-image: url(/img/picbed/d.webp);
   background-size: cover;
   background-position: center;
   border-radius: 1rem;
