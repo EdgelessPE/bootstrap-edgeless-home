@@ -1,0 +1,40 @@
+{
+  "method": "Local production builds served with gzip for HTML/CSS/JS/SVG. Desktop Chrome 1365x768; empty browser context per build; CDP cache disabled; 150ms emulated latency, 4Mbps download, 0.8Mbps upload, 4x CPU slowdown. Both builds already use the 1600px carousel images. Analytics blocked and version APIs mocked identically in both runs. Laboratory comparison, not deployed or field-user measurements.",
+  "runs": [
+    {
+      "name": "before",
+      "fcpMs": 1852,
+      "lcpMs": 2028,
+      "loadMs": 6200.5,
+      "cls": 0.00964141684780421,
+      "interactiveIslands": 10,
+      "completedRequestsAtLoad": 57,
+      "transferBytesAtLoad": 2765614,
+      "errors": []
+    },
+    {
+      "name": "after",
+      "fcpMs": 984,
+      "lcpMs": 984,
+      "loadMs": 1054.5999999940395,
+      "cls": 0,
+      "interactiveIslands": 5,
+      "completedRequestsAtLoad": 10,
+      "transferBytesAtLoad": 268773,
+      "errors": []
+    }
+  ],
+  "functionalVerification": [
+    "Desktop and mobile navigation",
+    "Theme switching",
+    "Carousel next/previous controls and CSS arrows",
+    "Donation modal and deferred QR image with original aspect ratio",
+    "Backup and cloud download modals",
+    "Beta modal via button and openBetaDrawer=1 URL parameter",
+    "Parallel version requests and five-second timeout fallback",
+    "All 40 SVG icon masks resolve",
+    "No browser runtime or hydration errors",
+    "Production build, lint, and asset/report checks pass"
+  ],
+  "deployment": "Frontend changes are ready in the production build. Nginx cache configuration is provided in deploy/nginx-cache.conf and documented in README.md; it has not been applied or nginx -t validated on the production server."
+}

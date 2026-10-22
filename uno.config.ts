@@ -82,7 +82,6 @@ export default defineConfig({
     'purple-text': 'text-purple-500',
     'red-text': 'text-red-500',
     'yellow-text': 'text-yellow-500',
-    'wow-fadeIn': 'wow fadeIn animate-duration-1s',
     'circle-icon': 'w-50px h-50px bg-[#2F5696] text-white rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0',
   },
   rules: [

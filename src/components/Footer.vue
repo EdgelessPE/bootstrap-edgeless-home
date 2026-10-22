@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer wow-fadeIn">
+  <footer class="footer">
     <ContentModal :visible="showBetaModal" title="获取内测" @close="showBetaModal = false">
       <div class="flex flex-col items-center gap-6">
         <a href="https://ks.wjx.top/vj/OSaSz3p.aspx" target="_blank" class="beta-btn">

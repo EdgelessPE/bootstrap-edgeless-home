@@ -33,7 +33,15 @@
             </ul>
           </div>
           <div class="col-md-4">
-            <img src="/img/picbed/b.webp" alt="" class="img-fluid" />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/img/picbed/b.webp"
+              width="497"
+              height="788"
+              alt=""
+              class="img-fluid"
+            />
           </div>
         </div>
       </div>

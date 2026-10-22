@@ -5,7 +5,7 @@
     <div
       v-for="(row, rowIndex) in features"
       :key="rowIndex"
-      class="row features-small mt-5 wow-fadeIn"
+      class="row features-small mt-5"
       :class="{ 'mt-4': rowIndex > 0 }"
     >
       <div v-for="(feature, index) in row" :key="index" class="col-xl-3 col-lg-6 col-md-6">

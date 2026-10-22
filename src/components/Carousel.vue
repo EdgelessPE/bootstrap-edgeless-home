@@ -21,7 +21,7 @@
           :style="`background-image: url('${slide.bgImage}'); background-repeat: no-repeat; background-size: cover;`"
         >
           <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
-            <div class="text-center white-text mx-5 wow-fadeIn">
+            <div class="text-center white-text mx-5">
               <h1 class="mb-4 text-white" :class="{ 'font-earth': slide.isTitleLarge }">
                 <strong v-html="slide.title"></strong>
               </h1>
@@ -58,7 +58,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 const beta = ref("loading...");
 const alpha = ref("loading...");
@@ -110,26 +110,43 @@ const slides = [
   },
 ];
 
-const getEdgeless = async () => {
+const versionController = new AbortController();
+let versionTimeout: ReturnType<typeof setTimeout> | undefined;
+
+const fetchVersion = async (url: string) => {
+  const response = await fetch(url, { signal: versionController.signal });
+  if (!response.ok) throw new Error(`Version request failed: ${response.status}`);
+  return response;
+};
+
+const getBeta = async () => {
   try {
-    const res = await fetch("https://legacy.edgeless.top/api/v2/info/iso_version");
+    const res = await fetchVersion("https://legacy.edgeless.top/api/v2/info/iso_version");
     const ver = await res.text();
     beta.value = ver;
   } catch (e) {
     beta.value = "获取失败";
   }
+};
 
+const getAlpha = async () => {
   try {
-    const res = await fetch("https://legacy.edgeless.top/api/v2/alpha/data?token=そうだよ");
+    const res = await fetchVersion("https://legacy.edgeless.top/api/v2/alpha/data?token=そうだよ");
     const json = await res.json();
-    alpha.value = json.version;
+    alpha.value = typeof json.version === "string" ? json.version : "0.0.0";
   } catch (e) {
     alpha.value = "0.0.0";
   }
 };
 
 onMounted(() => {
-  getEdgeless();
+  versionTimeout = setTimeout(() => versionController.abort(), 5000);
+  void Promise.allSettled([getBeta(), getAlpha()]).finally(() => clearTimeout(versionTimeout));
+});
+
+onUnmounted(() => {
+  clearTimeout(versionTimeout);
+  versionController.abort();
 });
 </script>
 
@@ -247,10 +264,6 @@ onMounted(() => {
   box-shadow: 0 8px 25px var(--black-25);
 }
 
-.wow.fadeIn {
-  animation-duration: 1s;
-}
-
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-image: none !important;
@@ -292,20 +305,25 @@ onMounted(() => {
   color: var(--custom-fff) !important;
 }
 
-.carousel-control-prev-icon::before {
-  font-family: "FontAwesome" !important;
-  content: "\f104" !important;
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+  content: "";
+  display: block;
+  width: 0.55em;
+  height: 0.55em;
+  border-top: 0.15em solid currentColor;
+  border-right: 0.15em solid currentColor;
   color: var(--custom-fff) !important;
   font-size: 1.75rem !important;
   transition: color 0.3s ease;
 }
 
+.carousel-control-prev-icon::before {
+  transform: rotate(-135deg);
+}
+
 .carousel-control-next-icon::before {
-  font-family: "FontAwesome" !important;
-  content: "\f105" !important;
-  color: var(--custom-fff) !important;
-  font-size: 1.75rem !important;
-  transition: color 0.3s ease;
+  transform: rotate(45deg);
 }
 
 #version {

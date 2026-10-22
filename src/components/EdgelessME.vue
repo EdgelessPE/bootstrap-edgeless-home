@@ -6,7 +6,15 @@
         <h1 style="color: var(--brand-blue)" class="h1 text-center mb-5 h-auto">了解Edgeless ME</h1>
         <div class="row cwp17-two align-items-center">
           <div class="col-md-6">
-            <img src="/img/LOGO_WEPE.webp" class="img-fluid max-w-full h-auto" alt="" />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="/img/LOGO_WEPE.webp"
+              width="210"
+              height="50"
+              class="img-fluid max-w-full h-auto"
+              alt=""
+            />
           </div>
           <div class="col-md-6 cwp17-text">
             <h3 class="h3 h-auto">忠实的微PE用户?</h3>

@@ -1,6 +1,7 @@
 @font-face {
   font-family: earth;
-  src: url("/fonts/earth.ttf"), url("/fonts/earth.woff");
+  src: url("/fonts/earth.ttf") format("truetype");
+  font-display: swap;
 }
 
 .font-earth {
@@ -18,7 +19,8 @@ header {
 }
 
 body {
-  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 16px;
   line-height: 1.7;
   color: var(--text-primary);
@@ -123,11 +125,18 @@ a:hover {
     color: var(--text-secondary) !important;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: var(--text-primary) !important;
   }
 
-  p, span, li {
+  p,
+  span,
+  li {
     color: var(--text-secondary) !important;
   }
 
@@ -150,7 +159,8 @@ a:hover {
     background: linear-gradient(90deg, var(--primary-light), var(--primary-lighter));
   }
 
-  .section-title, .section-subtitle {
+  .section-title,
+  .section-subtitle {
     color: var(--text-primary) !important;
   }
 

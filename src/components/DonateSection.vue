@@ -23,7 +23,15 @@
               target="_blank"
             >
               <div class="qrcode-wrapper">
-                <img src="/img/pay.webp" alt="捐赠二维码" class="img-fluid" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="/img/pay.webp"
+                  width="300"
+                  height="300"
+                  alt="捐赠二维码"
+                  class="img-fluid"
+                />
               </div>
               <h4 class="donate-qr-title">支持支付宝、微信</h4>
               <small class="d-block donate-hint"

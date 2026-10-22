@@ -1,18 +1,18 @@
 {
-  "scope": "All 21 local PNG/JPEG assets in public/img and public/guide/img; SVG/ICO favicons and external image URLs are unchanged.",
+  "scope": "All 21 local PNG/JPEG assets in public/img and public/guide/img converted to WebP; two ICO favicons optimized; SVG favicon and external image URLs unchanged.",
   "encoder": {
     "sharp": "0.34.5",
     "webp": "1.6.0",
     "vips": "8.17.3"
   },
-  "policy": "Original dimensions retained; actual PNG data encoded losslessly (including alipay.jpg); JPEG data encoded at quality 85. Metadata is stripped by default.",
-  "verification": "Every output decoded successfully and dimensions match. Lossless outputs match all visible RGB pixels and every alpha value, including QR codes. Fully opaque alpha channels may be omitted by the encoder without changing the decoded image.",
+  "policy": "Actual PNG data encoded losslessly (including alipay.jpg); JPEG data encoded at quality 85. Original dimensions retained except carousel backgrounds, which are limited to 1600px width without upscaling. Metadata is stripped by default.",
+  "verification": "Every output decoded successfully. Dimensions match the originals except resized carousel backgrounds, whose aspect ratios are retained with at most one pixel of rounding. Lossless outputs match all visible RGB pixels and every alpha value, including QR codes. Fully opaque alpha channels may be omitted without changing the decoded image.",
   "totals": {
     "files": 21,
     "originalBytes": 5746456,
-    "webpBytes": 2698130,
-    "savedBytes": 3048326,
-    "reductionPercent": 53.05
+    "webpBytes": 1901920,
+    "savedBytes": 3844536,
+    "reductionPercent": 66.9
   },
   "files": [
     {
@@ -267,33 +267,45 @@
       "source": "public/img/picbed/r1.jpg",
       "target": "public/img/picbed/r1.webp",
       "originalFormat": "jpeg",
-      "width": 2666,
-      "height": 1500,
+      "width": 1600,
+      "height": 900,
       "options": {
         "quality": 85,
         "effort": 6,
         "smartSubsample": true
       },
       "originalBytes": 637412,
-      "webpBytes": 435198,
-      "savedBytes": 202214,
-      "reductionPercent": 31.72
+      "webpBytes": 164358,
+      "savedBytes": 473054,
+      "reductionPercent": 74.21,
+      "originalWidth": 2666,
+      "originalHeight": 1500,
+      "resize": {
+        "width": 1600,
+        "withoutEnlargement": true
+      }
     },
     {
       "source": "public/img/picbed/r2.jpg",
       "target": "public/img/picbed/r2.webp",
       "originalFormat": "jpeg",
-      "width": 2666,
-      "height": 1500,
+      "width": 1600,
+      "height": 900,
       "options": {
         "quality": 85,
         "effort": 6,
         "smartSubsample": true
       },
       "originalBytes": 815645,
-      "webpBytes": 719990,
-      "savedBytes": 95655,
-      "reductionPercent": 11.73
+      "webpBytes": 278632,
+      "savedBytes": 537013,
+      "reductionPercent": 65.84,
+      "originalWidth": 2666,
+      "originalHeight": 1500,
+      "resize": {
+        "width": 1600,
+        "withoutEnlargement": true
+      }
     },
     {
       "source": "public/img/picbed/r3.jpg",
@@ -315,17 +327,23 @@
       "source": "public/img/picbed/r4.jpg",
       "target": "public/img/picbed/r4.webp",
       "originalFormat": "jpeg",
-      "width": 1920,
-      "height": 1080,
+      "width": 1600,
+      "height": 900,
       "options": {
         "quality": 85,
         "effort": 6,
         "smartSubsample": true
       },
       "originalBytes": 331548,
-      "webpBytes": 313274,
-      "savedBytes": 18274,
-      "reductionPercent": 5.51
+      "webpBytes": 229262,
+      "savedBytes": 102286,
+      "reductionPercent": 30.85,
+      "originalWidth": 1920,
+      "originalHeight": 1080,
+      "resize": {
+        "width": 1600,
+        "withoutEnlargement": true
+      }
     },
     {
       "source": "public/img/qrcode.png",
@@ -345,11 +363,87 @@
   ],
   "overallLocalImages": {
     "files": 24,
-    "unchangedFaviconFiles": 3,
-    "unchangedFaviconBytes": 436809,
+    "unchangedFaviconFiles": 1,
+    "unchangedFaviconBytes": 749,
     "originalBytes": 6183265,
-    "finalBytes": 3134939,
-    "savedBytes": 3048326,
-    "reductionPercent": 49.3
+    "finalBytes": 1906371,
+    "savedBytes": 4276894,
+    "reductionPercent": 69.17,
+    "optimizedFaviconFiles": 2,
+    "finalFaviconBytes": 4451
+  },
+  "carouselResize": {
+    "maxWidth": 1600,
+    "sourceRevision": "7507e2e5e3cadff8ac5654c84a4b34fd10300b5f",
+    "policy": "Resized from the original JPEGs in Git to avoid re-encoding existing lossy WebP files. Aspect ratios and quality 85 retained. The 1440px r3 image is unchanged to avoid upscaling.",
+    "beforeBytes": 1664840,
+    "afterBytes": 868630,
+    "savedBytes": 796210,
+    "reductionPercent": 47.83,
+    "files": [
+      {
+        "target": "public/img/picbed/r1.webp",
+        "previousWidth": 2666,
+        "previousHeight": 1500,
+        "previousWebpBytes": 435198,
+        "width": 1600,
+        "height": 900,
+        "webpBytes": 164358,
+        "savedBytes": 270840,
+        "reductionPercent": 62.23
+      },
+      {
+        "target": "public/img/picbed/r2.webp",
+        "previousWidth": 2666,
+        "previousHeight": 1500,
+        "previousWebpBytes": 719990,
+        "width": 1600,
+        "height": 900,
+        "webpBytes": 278632,
+        "savedBytes": 441358,
+        "reductionPercent": 61.3
+      },
+      {
+        "target": "public/img/picbed/r3.webp",
+        "previousWidth": 1440,
+        "previousHeight": 900,
+        "previousWebpBytes": 196378,
+        "width": 1440,
+        "height": 900,
+        "webpBytes": 196378,
+        "savedBytes": 0,
+        "reductionPercent": 0
+      },
+      {
+        "target": "public/img/picbed/r4.webp",
+        "previousWidth": 1920,
+        "previousHeight": 1080,
+        "previousWebpBytes": 313274,
+        "width": 1600,
+        "height": 900,
+        "webpBytes": 229262,
+        "savedBytes": 84012,
+        "reductionPercent": 26.82
+      }
+    ]
+  },
+  "faviconOptimization": {
+    "policy": "Original icons resized to 48x48 and stored as PNG-compressed ICO images. Brand artwork preserved.",
+    "files": [
+      {
+        "target": "public/favicon.ico",
+        "originalBytes": 270398,
+        "finalBytes": 2968,
+        "width": 48,
+        "height": 48
+      },
+      {
+        "target": "public/guide/favicon.ico",
+        "originalBytes": 165662,
+        "finalBytes": 734,
+        "width": 48,
+        "height": 48
+      }
+    ]
   }
 }

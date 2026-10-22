@@ -17,7 +17,11 @@
               <div class="col-md-6 mb-4">
                 <div class="image-wrapper">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     :src="introSection.image"
+                    :width="introSection.width"
+                    :height="introSection.height"
                     class="img-fluid shadow-z-depth-2 rounded"
                     alt=""
                   />
@@ -29,11 +33,19 @@
       </section>
 
       <!-- Section 2 -->
-      <section class="section-alt mt-5 wow-fadeIn">
+      <section class="section-alt mt-5">
         <div class="row align-items-center">
           <div class="col-md-6 mb-4">
             <div class="image-wrapper">
-              <img :src="coreSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
+              <img
+                loading="lazy"
+                decoding="async"
+                :src="coreSection.image"
+                :width="coreSection.width"
+                :height="coreSection.height"
+                class="img-fluid shadow-z-depth-2 rounded"
+                alt=""
+              />
             </div>
           </div>
           <div class="col-md-6 mb-4">
@@ -54,7 +66,7 @@
       <section class="section-block">
         <h3 class="h3 text-center mb-5 section-title">{{ pluginSection.title }}</h3>
         <div class="section-divider"></div>
-        <div class="row wow-fadeIn align-items-center">
+        <div class="row align-items-center">
           <div class="col-lg-6 col-md-12 px-4">
             <div v-for="(feature, index) in pluginFeatures" :key="index" class="feature-card mb-4">
               <div class="feature-icon-wrapper">
@@ -68,7 +80,15 @@
           </div>
           <div class="col-md-6 mb-4">
             <div class="image-wrapper">
-              <img :src="pluginSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
+              <img
+                loading="lazy"
+                decoding="async"
+                :src="pluginSection.image"
+                :width="pluginSection.width"
+                :height="pluginSection.height"
+                class="img-fluid shadow-z-depth-2 rounded"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -81,10 +101,18 @@
       <section class="section-block">
         <h3 class="h3 text-center mb-5 section-title">{{ themeSection.title }}</h3>
         <div class="section-divider"></div>
-        <div class="row wow-fadeIn align-items-center">
+        <div class="row align-items-center">
           <div class="col-md-6 mb-4">
             <div class="image-wrapper">
-              <img :src="themeSection.image" class="img-fluid shadow-z-depth-2 rounded" alt="" />
+              <img
+                loading="lazy"
+                decoding="async"
+                :src="themeSection.image"
+                :width="themeSection.width"
+                :height="themeSection.height"
+                class="img-fluid shadow-z-depth-2 rounded"
+                alt=""
+              />
             </div>
           </div>
           <div class="col-lg-6 col-md-12 px-4">
@@ -139,6 +167,8 @@ const introSection = {
     "我们不断探索PE的极限，力图打造可玩性最佳的PE工具，为您呈现一份最适合您的PE",
   ],
   image: "/img/picbed/f1.webp",
+  width: 1500,
+  height: 817,
 };
 
 const coreSection = {
@@ -149,16 +179,22 @@ const coreSection = {
     "提供有线+无线网络连接能力，同时具备较为完整的库文件支持",
   ],
   image: "/img/picbed/f2.webp",
+  width: 1500,
+  height: 844,
 };
 
 const pluginSection = {
   title: "强大的插件包",
   image: "/img/picbed/f3.webp",
+  width: 2449,
+  height: 1633,
 };
 
 const themeSection = {
   title: "优雅的主题包",
   image: "/img/picbed/f4.webp",
+  width: 2449,
+  height: 1632,
 };
 
 const performanceSection = {

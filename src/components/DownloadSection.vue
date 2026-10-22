@@ -1,5 +1,14 @@
 <template>
-  <section class="download-section wow-fadeIn">
+  <section class="download-section">
+    <img
+      src="/img/picbed/d.webp"
+      width="1469"
+      height="650"
+      loading="lazy"
+      decoding="async"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover"
+    />
     <div class="download-overlay"></div>
     <div class="card-body text-white text-center py-5 px-5 my-5">
       <div class="mb-4">
@@ -151,9 +160,6 @@ const closeModal = () => {
 <style scoped>
 .download-section {
   position: relative;
-  background-image: url(/img/picbed/d.webp);
-  background-size: cover;
-  background-position: center;
   border-radius: 1rem;
   overflow: hidden;
   margin: 2rem 0;

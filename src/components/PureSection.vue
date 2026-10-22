@@ -2,7 +2,7 @@
   <section class="pure-section">
     <h2 class="my-5 h2 text-center section-title">不仅仅是纯净</h2>
     <div class="section-divider"></div>
-    <div class="row features-small mb-5 mt-3 wow-fadeIn align-items-stretch">
+    <div class="row features-small mb-5 mt-3 align-items-stretch">
       <div class="col-md-4">
         <div class="content-card h-100">
           <div class="row mb-4">
@@ -27,7 +27,15 @@
       </div>
       <div class="col-md-4 flex-center text-center">
         <div class="center-image-wrapper">
-          <img :src="centerImage" class="img-fluid shadow-z-depth-2 rounded" alt="" />
+          <img
+            loading="lazy"
+            decoding="async"
+            :src="centerImage"
+            width="702"
+            height="1080"
+            class="img-fluid shadow-z-depth-2 rounded"
+            alt=""
+          />
         </div>
       </div>
       <div class="col-md-4 mt-2">
